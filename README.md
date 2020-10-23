@@ -1,0 +1,2 @@
+# pustaka
+mywiki
