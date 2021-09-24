@@ -1,2 +1,2 @@
 # pustaka
-mywiki
+[WIKI](https://github.com/playmakermz/pustaka/wiki)
