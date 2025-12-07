@@ -34,6 +34,14 @@ adalah organisasi profesi untuk pengembangan dan memajukan profesi akuntan di in
 4. integrasi dan implementasi 
 5. pemeliharaan dan peningkatan
 
+## Tujuan Kekayaan intelektual (HAKI)
+
+adalah untuk memberikan suatu perlindungan hukum dan dorongan kreativitas serta inovasi. 
+
+Sedangkan tujuan kecuali HAKI adalah sesuatu yang bertentangan, sperti:
+
+"Menjamin terciptannya monopoli permanen dan tidak terbatas atas suatu karya atau penemuan"
+
 # point kecil:
 - ‘ethikos’ adalah bahasa yunani dengan arti : “timbul dari kebiasaan”
 - ada dua pengertian etika menurut aristoteles : 
