@@ -42,6 +42,18 @@ Sedangkan tujuan kecuali HAKI adalah sesuatu yang bertentangan, sperti:
 
 "Menjamin terciptannya monopoli permanen dan tidak terbatas atas suatu karya atau penemuan"
 
+## Pembagian tugas HAKI
+
+Dalam konteks invensi dan Hak Kekayaan Intelektual (HAKI):
+
+* Eksekutor adalah orang atau sekelompok orang yang secara langsung melaksanakan ide dan mewujudkannya menjadi kegiatan yang menghasilkan invensi (penemuan baru yang dapat diterapkan).
+
+* Desainer fokus pada perancangan estetika atau bentuk visual.
+
+* Claimer (pengklaim) adalah orang yang mengajukan klaim hak atas invensi (biasanya si penemu atau pemilik).
+
+* Investor adalah pihak yang memberikan modal atau dana.
+
 # point kecil:
 - ‘ethikos’ adalah bahasa yunani dengan arti : “timbul dari kebiasaan”
 - ada dua pengertian etika menurut aristoteles : 
