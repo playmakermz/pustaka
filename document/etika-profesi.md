@@ -54,6 +54,10 @@ Dalam konteks invensi dan Hak Kekayaan Intelektual (HAKI):
 
 * Investor adalah pihak yang memberikan modal atau dana.
 
+## Lisensi HAKI
+
+Lisensi adalah izin yang diberikan oleh pemegang HAKI (dalam hal ini, pemegang paten) kepada pihak lain untuk menggunakan hak ekonomis yang dimiliki pemegang HAKI, dalam jangka waktu dan syarat tertentu.
+
 # point kecil:
 - ‘ethikos’ adalah bahasa yunani dengan arti : “timbul dari kebiasaan”
 - ada dua pengertian etika menurut aristoteles : 
