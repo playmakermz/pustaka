@@ -83,6 +83,51 @@ Hacking/Cracking: Metode intrusi (penyusupan) ke sistem komputer.
 
 Denial of Service (DoS/DDoS): Metode pembajiran traffic untuk melumpuhkan layanan.
 
+## Delapan Dimensi Keamanan ITU-T X.805
+Akses Kontrol (Access Control):
+
+Memastikan bahwa hanya entitas yang berwenang yang dapat mengakses sumber daya jaringan, layanan, atau aplikasi.
+
+**Autentikasi (Authentication):**
+
+Memverifikasi identitas entitas (pengguna atau perangkat) yang terlibat dalam komunikasi atau mengakses sumber daya.
+
+**Non-Repudiasi (Non-Repudiation):**
+
+Memberikan bukti terjadinya suatu aksi atau kejadian, sehingga entitas yang terlibat tidak dapat menyangkal bahwa mereka melakukan tindakan tersebut (misalnya mengirim atau menerima pesan).
+
+**Kerahasiaan Data (Data Confidentiality):**
+
+Memastikan bahwa informasi tidak diungkapkan kepada individu, entitas, atau proses yang tidak berwenang (melalui enkripsi).
+
+**Keamanan Komunikasi (Communication Security):**
+
+Melindungi komunikasi dari serangan pasif dan aktif (misalnya sniffing, message modification) selama transmisi data.
+
+**Integritas Data (Data Integrity):**
+
+Memastikan bahwa data belum diubah, dihancurkan, atau dimodifikasi secara tidak sah, dan bahwa data yang diterima sama persis dengan yang dikirim.
+
+**Ketersediaan (Availability):**
+
+Memastikan bahwa elemen jaringan, layanan, dan aplikasi dapat diakses dan digunakan oleh pengguna yang sah ketika dibutuhkan.
+
+**Privasi (Privacy):**
+
+Melindungi informasi pribadi atau data yang dapat diidentifikasi secara pribadi (Personally Identifiable Information/PII) dari pengungkapan yang tidak berwenang.
+
+## Dimensi keamanan Kontrol Akses (Access Control) 
+merupakan serangkaian mekanisme dan kebijakan yang dirancang untuk memastikan bahwa hanya pengguna, perangkat, atau entitas yang memiliki otorisasi (izin) yang dapat mengakses sumber daya, layanan, atau data dalam suatu sistem atau jaringan.
+
+## Dalam konteks keamanan data dan jaringan, Trudy adalah nama sandi yang sering digunakan untuk mewakili pihak penyerang aktif (active attacker) atau penyusup (intruder) yang bertujuan untuk:
+
+- Mengganggu (Disrupt): Melumpuhkan komunikasi atau layanan.
+
+- Menyadap (Intercept): Mendapatkan informasi sensitif.
+
+- Memodifikasi (Modify): Mengubah data yang sedang dikirimkan antara pihak yang sah (biasanya Alice dan Bob).
+
+
 ***
 
 # Tabel point kecil
@@ -103,4 +148,8 @@ No | Soal | Pengertian
 12 | DBA (Database administrator) | bertanggung jawab untuk memastikan data organisasi tersedia, aman, tekelola, dan bekerja optimal.
 13 | standar keamanan dengan kode rekomendasi Seri X adalah | Badan perwakilan PBB (Perserikatan Bangsa-Bangsa) yang membuat standar keamanan dengan kode rekomendasi Seri X adalah ITU-T (International Telecommunication Union – Telecommunication Standardization Sector).
 14 | ITU merupakan kependekan dari | International Telecommunication Union.
+1 | Singkatan SG pada SG-n | adalah kelompok studi yang dibentuk oleh ITU-T untuk mengembangkan standar dan rekomendasi di bidang tertentu (di mana 'n' mewakili nomor kelompok studi tersebut, misalnya SG-17 untuk keamanan).
+1 |  SG-17 (Study Group 17) adalah | kelompok studi ITU-T yang bertanggung jawab secara utama dan khusus dalam membuat standar keamanan.
+1 Audit merupakan | salah satu komponen Kontrol Akses yang sangat penting untuk tujuan Akuntabilitas (Accountability) dan penegakan kebijakan keamanan.
+
 
