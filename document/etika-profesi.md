@@ -148,8 +148,8 @@ No | Soal | Pengertian
 12 | DBA (Database administrator) | bertanggung jawab untuk memastikan data organisasi tersedia, aman, tekelola, dan bekerja optimal.
 13 | standar keamanan dengan kode rekomendasi Seri X adalah | Badan perwakilan PBB (Perserikatan Bangsa-Bangsa) yang membuat standar keamanan dengan kode rekomendasi Seri X adalah ITU-T (International Telecommunication Union – Telecommunication Standardization Sector).
 14 | ITU merupakan kependekan dari | International Telecommunication Union.
-1 | Singkatan SG pada SG-n | adalah kelompok studi yang dibentuk oleh ITU-T untuk mengembangkan standar dan rekomendasi di bidang tertentu (di mana 'n' mewakili nomor kelompok studi tersebut, misalnya SG-17 untuk keamanan).
-1 |  SG-17 (Study Group 17) adalah | kelompok studi ITU-T yang bertanggung jawab secara utama dan khusus dalam membuat standar keamanan.
-1 Audit merupakan | salah satu komponen Kontrol Akses yang sangat penting untuk tujuan Akuntabilitas (Accountability) dan penegakan kebijakan keamanan.
+15 | Singkatan SG pada SG-n | adalah kelompok studi yang dibentuk oleh ITU-T untuk mengembangkan standar dan rekomendasi di bidang tertentu (di mana 'n' mewakili nomor kelompok studi tersebut, misalnya SG-17 untuk keamanan).
+16 |  SG-17 (Study Group 17) adalah | kelompok studi ITU-T yang bertanggung jawab secara utama dan khusus dalam membuat standar keamanan.
+17 | Audit merupakan | salah satu komponen Kontrol Akses yang sangat penting untuk tujuan Akuntabilitas (Accountability) dan penegakan kebijakan keamanan.
 
 
