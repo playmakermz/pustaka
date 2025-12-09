@@ -127,6 +127,13 @@ merupakan serangkaian mekanisme dan kebijakan yang dirancang untuk memastikan ba
 
 - Memodifikasi (Modify): Mengubah data yang sedang dikirimkan antara pihak yang sah (biasanya Alice dan Bob).
 
+## Sebutan orang 
+
+- Kewirausahaan (b): Merupakan proses atau aktivitas dinamis yang melibatkan identifikasi, penciptaan, dan pelaksanaan ide-ide baru (inovasi dan kreativitas) untuk menghasilkan nilai dan manfaat bagi masyarakat, sering kali melalui pendirian bisnis.
+
+- Wirausaha (a) dan Usahawan (d): Adalah orang atau pelaku yang menjalankan proses kewirausahaan tersebut.
+
+## 
 
 ***
 
@@ -151,5 +158,7 @@ No | Soal | Pengertian
 15 | Singkatan SG pada SG-n | adalah kelompok studi yang dibentuk oleh ITU-T untuk mengembangkan standar dan rekomendasi di bidang tertentu (di mana 'n' mewakili nomor kelompok studi tersebut, misalnya SG-17 untuk keamanan).
 16 |  SG-17 (Study Group 17) adalah | kelompok studi ITU-T yang bertanggung jawab secara utama dan khusus dalam membuat standar keamanan.
 17 | Audit merupakan | salah satu komponen Kontrol Akses yang sangat penting untuk tujuan Akuntabilitas (Accountability) dan penegakan kebijakan keamanan.
+18 | B2C (Business-to-Consumer): |  Transaksi antara penjual (bisnis) dengan pembeli individu (konsumen). Ini adalah model yang dominan di ecommerce.
+19 | Startup merupakan adopsi dari bahasa Inggris yang memiliki arti | adalah: tindakan atau proses
 
 
