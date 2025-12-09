@@ -58,18 +58,49 @@ Dalam konteks invensi dan Hak Kekayaan Intelektual (HAKI):
 
 Lisensi adalah izin yang diberikan oleh pemegang HAKI (dalam hal ini, pemegang paten) kepada pihak lain untuk menggunakan hak ekonomis yang dimiliki pemegang HAKI, dalam jangka waktu dan syarat tertentu.
 
-# point kecil:
-- ‘ethikos’ adalah bahasa yunani dengan arti : “timbul dari kebiasaan”
-- ada dua pengertian etika menurut aristoteles : 
-  - Terminius Technicus: adalah ilmu pengetahuan yang mempelajari problem tindakan manusia
-  - Manner and custom: cara hidup yang dipraktikan oleh suatu kelompok atau masyarakat.
-- Teologis(etika religious):  adalah dimana etika didasari oleh ajaran agama
-- Etika deskriptif : cabang yang akan menggambarkan dan menjelaskan sikap dan perilaku moral manusia, dan nilai-nilai hidup, sebagaimana dengan kenyataan sosial.
-- 'teknique' adalah bahasa prancis yang berarti: cara, metode atau prosedur untuk menghasilkan sesuatu. ini adalah kata dasar dari teknologi. 
-- pohon papirus: adalah media tulis 500 SM bagi bangsa msir.
-- mesin cetak plat besi berubah menjadi bingkai kayu pada tahun 1455(1440 awal) oleh johan gutenberg
-- EDP (Elektronik Data processing ), sebutan untuk yang bertugas mengoperasikan adalah 'operator eelectronic data processing'
-- UU HAKI(Hak atas kekayaan intelektual atau hak cipta) dengan nomor 19 tahun 2002, diberlakukan sejak : 29 juli 2003.
-- DOS (Denial of service) : adalah untuk membuat jaringan tidak dapat diakses, sehingga pengguna tidak dapat mendapatkan layanan jaringan
-- Analisis sitem adalah profesi yang bertanggung jawab sebagai jembatan antara kebutuhan bisnis(dampak organisasi) dan solusi teknologi 
-- DBA (Database administrator) bertanggung jawab untuk memastikan data organisasi tersedia, aman, tekelola, dan bekerja optimal.
+## Tipe kejahatan cyber
+* Cybercrime (Kejahatan Siber): Tindakan kriminal ilegal yang menggunakan teknologi komputer sebagai alat, objek, atau tempat kejadian, biasanya bertujuan untuk mendapatkan keuntungan finansial atau merugikan individu/organisasi lain secara sepihak. Ini adalah istilah yang paling umum dan tepat.
+
+* Cyberattack (Serangan Siber): Istilah yang lebih luas yang merujuk pada segala upaya permusuhan atau ofensif terhadap sistem informasi, jaringan, atau infrastruktur. Cybercrime sering kali melibatkan cyberattack, tetapi tidak semua cyberattack bermotif kriminal (misalnya, beberapa serangan mungkin bermotif politik atau perang informasi).
+
+* Cyberterrorism (Terorisme Siber): Penggunaan teknologi komputer untuk melakukan serangan yang bertujuan menimbulkan ketakutan massal, merusak infrastruktur vital, atau memaksakan agenda politik/ideologi. Motifnya bukan sekadar keuntungan sepihak, tetapi teror.
+
+## Motif kejahatan yang dapat dilihat berdasarkan kegiatan yang dilakukan:
+Kejahatan dunia maya biasanya dikelompokkan berdasarkan aktivitas atau objek kejahatan:
+
+Carding: Kejahatan yang fokus pada transaksi ilegal menggunakan kartu kredit atau data kartu milik orang lain.
+
+Cyberstalking: Kejahatan yang melibatkan pelecehan atau penguntitan terhadap individu menggunakan komunikasi elektronik dan internet.
+
+Pilihan Probing lebih merujuk pada aktivitas pengintaian atau pencarian kelemahan yang dilakukan sebagai tahap awal cyberattack, dan Cyber-tresspass (atau Unauthorized Access) adalah tindakan masuk ilegal ke sistem, di mana carding atau cyberstalking bisa menjadi tujuannya.
+
+## Beberapa Contoh Metode Ancaman
+Malware: Semua jenis perangkat lunak berbahaya (Virus, Trojan, Ransomware, Spyware).
+
+Phishing: Metode penipuan untuk mencuri data sensitif (seperti kata sandi) melalui email atau situs web palsu.
+
+Hacking/Cracking: Metode intrusi (penyusupan) ke sistem komputer.
+
+Denial of Service (DoS/DDoS): Metode pembajiran traffic untuk melumpuhkan layanan.
+
+***
+
+# Tabel point kecil
+
+No | Soal | Pengertian
+--- | --- | ---
+1| ethikos |  adalah bahasa yunani dengan arti : “timbul dari kebiasaan”
+2| pengertian etika menurut aristoteles |   **1.** Terminius Technicus: adalah ilmu pengetahuan yang mempelajari problem tindakan manusia. **2.** Manner and custom: cara hidup yang dipraktikan oleh suatu kelompok atau masyarakat.
+3| Teologis(etika religious) | adalah dimana etika didasari oleh ajaran agama
+4|Etika deskriptif | cabang yang akan menggambarkan dan menjelaskan sikap dan perilaku moral manusia, dan nilai-nilai hidup, sebagaimana dengan kenyataan sosial.
+5| 'teknique' | adalah bahasa prancis yang berarti: cara, metode atau prosedur untuk menghasilkan sesuatu. ini adalah kata dasar dari teknologi. 
+6| pohon papirus | adalah media tulis 500 SM bagi bangsa msir.
+7| mesin cetak plat besi berubah menjadi bingkai kayu pada tahun 1455(1440 awal) | oleh johan gutenberg
+8| EDP (Elektronik Data processing ) | sebutan untuk yang bertugas mengoperasikan adalah 'operator eelectronic data processing'
+9| UU HAKI(Hak atas kekayaan intelektual atau hak cipta) dengan nomor 19 tahun 2002 | diberlakukan sejak : 29 juli 2003.
+10 | DOS (Denial of service)  | adalah untuk membuat jaringan tidak dapat diakses, sehingga pengguna tidak dapat mendapatkan layanan jaringan
+11 | Analisis sitem adalah | profesi yang bertanggung jawab sebagai jembatan antara kebutuhan bisnis(dampak organisasi) dan solusi teknologi 
+12 | DBA (Database administrator) | bertanggung jawab untuk memastikan data organisasi tersedia, aman, tekelola, dan bekerja optimal.
+13 | standar keamanan dengan kode rekomendasi Seri X adalah | Badan perwakilan PBB (Perserikatan Bangsa-Bangsa) yang membuat standar keamanan dengan kode rekomendasi Seri X adalah ITU-T (International Telecommunication Union – Telecommunication Standardization Sector).
+14 | ITU merupakan kependekan dari | International Telecommunication Union.
+
