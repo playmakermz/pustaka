@@ -4,6 +4,9 @@
 
 <img width="792" height="527" alt="image" src="https://github.com/user-attachments/assets/349e2f3e-1daa-48a3-b748-2df4fbced6e9" />
 
+## 
+
+
 ## Dalam pemrograman asinkron berbasis Promise di TypeScript
 
 (dan JavaScript), ketika Anda memiliki serangkaian operasi asinkron yang harus dijalankan secara berurutan (di mana operasi kedua bergantung pada keberhasilan atau hasil dari operasi pertama), mekanisme yang digunakan adalah Promise Chaining.
@@ -24,4 +27,4 @@ c. union type: Ini adalah fitur TypeScript (seperti string | number) yang memung
 
 Point | Penjelasan
 --- | ---
-- | -
+ webview | Komponen yang selalu disertakan dalam bundle aplikasi hybrid adalah:
