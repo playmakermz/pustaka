@@ -1,4 +1,4 @@
-<img width="817" height="688" alt="image" src="https://github.com/user-attachments/assets/c5f51c5a-2607-41ff-9def-bb38f4236e8e" /># Pemrogramahn berbasis perangkat bergerak
+# Pemrogramahn berbasis perangkat bergerak
 
 ## mengenai ASYNC
 
@@ -367,6 +367,86 @@ Penjelasan (Fokus pada Tooling)
 Ketika yargs telah mem-parsing argumen command line, hasil parsing (yang disimpan dalam variabel seperti argv) adalah objek yang propertinya sesuai dengan nama-nama argumen (atau alias-nya).
 
 Argumen yang di-parse dapat diakses langsung sebagai properti pada objek argv menggunakan notasi titik, misalnya argv.nama, di mana nama adalah nama opsi yang didefinisikan atau diberikan oleh pengguna.
+
+## Axios
+
+Soal Pertama: Membuat Instansi Axios
+Soal: Instance dari axios bisa dibuat menggunakan .... A. new axiosInstance() B. new axiosHttpClient() C. axios.httpClient() D. axios.create()
+
+Jawaban
+D. axios.create()
+
+Penjelasan (Fokus pada Tooling/TypeScript)
+Untuk membuat instansi custom dari Axios (biasanya untuk mengatur base URL, headers, atau timeout yang berbeda dari global default), fungsi yang digunakan adalah axios.create(config). * Instansi ini sangat berguna dalam proyek TypeScript/Vue.js untuk membuat client API yang terpisah untuk layanan yang berbeda (misalnya, satu untuk API internal dan satu untuk API eksternal).
+
+2. Soal Kedua: Melihat Tipe File dari URL
+Soal: Jika ingin melihat tipe file yang diambil dari URL menggunakan axios, maka pemrogram bisa gunakan .... A. response object B. response.headers['content-type'] C. response.headers['file-type'] D. response.data
+
+Jawaban
+B. response.headers['content-type']
+
+Penjelasan (Fokus pada HTTP Protocol)
+Ketika Axios (atau HTTP client mana pun) mengambil data dari URL, informasi tentang jenis data yang dikirimkan (misalnya application/json, image/png, text/html) terkandung dalam HTTP Response Headers.
+
+Header standar yang digunakan untuk menunjukkan tipe media data adalah Content-Type.
+
+Dalam objek respons Axios, header diakses melalui properti response.headers. Oleh karena itu, nilainya diakses melalui response.headers['content-type'].
+
+
+## FSwrite
+
+Soal Pertama: Hasil Penulisan Array ke File
+Soal: Jika menyimpan data dalam bentuk array ke suatu file menggunakan fs/promises - writeFile, hasilnya adalah .... A. error B. array tertulis di file C. array akan dikonversi lebih dulu ke object sebelum ditulis D. array akan dikonversi menjadi string
+
+Jawaban
+D. array akan dikonversi menjadi string
+
+Penjelasan (Fokus pada Node.js/File System)
+Fungsi fs.writeFile (atau fs/promises.writeFile) di Node.js menerima data yang akan ditulis.
+
+Jika data yang diberikan adalah array atau object JavaScript (bukan Buffer atau string), Node.js akan secara internal memanggil .toString() pada array tersebut.
+
+Hasil dari .toString() pada array adalah string yang berisi elemen-elemen array yang dipisahkan oleh koma. Oleh karena itu, array akan dikonversi menjadi string sebelum ditulis ke file. (Jika ingin menyimpan array sebagai JSON, harus di-stringifikasi secara eksplisit menggunakan JSON.stringify()).
+
+2. Soal Kedua: Fungsi Kode Sumber await fs.writeFile(f, data);
+Soal: Potongan kode sumber berikut: await fs.writeFile(f, data); digunakan untuk .... A. memeriksa apakah nama file sesuai isi f bisa ditulisi B. memeriksa dan menuliskan isi data ke file bernama 'f' C. menuliskan isi dari data ke file dengan nama file 'f' D. menuliskan isi dari data ke file dengan nama sesuai isi f
+
+Jawaban
+C. menuliskan isi dari data ke file dengan nama file 'f'
+
+Penjelasan (Fokus pada Node.js/TypeScript)
+Dalam sintaks Node.js fs.writeFile(path, data, options), argumen pertama (f dalam contoh ini) mewakili jalur (path) atau nama file tempat penulisan data.
+
+Argumen kedua (data dalam contoh ini) adalah konten atau data yang ingin ditulis.
+
+Oleh karena itu, kode tersebut melakukan tindakan menuliskan isi dari variabel data ke file yang namanya ditentukan oleh variabel f.
+
+## NPM RUN
+Soal Pertama: Penempatan Definisi Script npm run
+Soal: Untuk membuat supaya npm run bisa menjalankan script sesuai keinginan kita, maka definisi script tersebut diletakkan pada .... A. bagian scripts di package.json B. bagian scripts di tsconfig.json C. Bagian exec-scripts di tsconfig.json D. Bagian exec-scripts di package.json
+
+Jawaban
+A. bagian scripts di package.json
+
+Penjelasan (Fokus pada Tooling)
+Semua perintah yang dapat dijalankan melalui npm run <nama-perintah> harus didefinisikan dalam objek scripts yang terletak di dalam file package.json. * Misalnya, jika Anda ingin menjalankan server pengembangan Vue/Ionic, Anda akan mendefinisikan: "serve": "vue-cli-service serve" di dalam bagian scripts.
+
+2. Soal Kedua: Karakter untuk Melewatkan Argumen ke npm run
+Soal: Supaya argumen dari yargs bisa terbaca saat menggunakan npm run, maka karakter yang harus digunakan adalah .... A. " B. -- C. ' D. "argumen"
+
+Jawaban
+B. --
+
+Penjelasan (Fokus pada Tooling)
+Ketika menjalankan npm run <perintah>, npm akan mengonsumsi argumen yang ada.
+
+Untuk meneruskan argumen tambahan dari command line kepada script yang sedang dijalankan (misalnya, script yang menggunakan yargs), Anda harus menggunakan pemisah ganda (--).
+
+Contoh: npm run build -- --env=production
+
+Argumen --env=production akan diteruskan kepada script build, yang kemudian dapat di-parse oleh library seperti yargs atau alat bundler.
+
+## 
 
 ***
 # Catatan kecil
