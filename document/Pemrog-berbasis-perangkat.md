@@ -737,6 +737,104 @@ C. err
 Penjelasan:
 Ketika Anda mendefinisikan global error handler di Vue 3 (app.config.errorHandler),
 
+***
+# Bab 5
+
+## Komponen inti yang harus di-import jika akan menggunakan single page layout adalah ....
+
+Jawaban yang Benar:
+
+C. IonPage, IonHeader, IonContent, IonFooter jika akan menggunakan header, content, dan footer
+
+IonPage: Ini adalah komponen container utama yang wajib ada untuk setiap halaman di aplikasi Ionic. Ini memberikan konteks visual dan fungsional yang diperlukan oleh framework Ionic (misalnya, untuk transisi halaman dan safeguarding area).
+
+## Urut-urutan definisi yang benar saat akan membuat layout tabs adalah ....
+
+Jawaban yang Benar:
+
+D. ion-tabs, ion-tab-bar, ion-tab-button
+
+## Suatu menu harus merupakan bagian dari halaman. Atribut yang digunakan untuk menetapkan halaman utama dari suatu menu adalah ....
+
+Jawaban yang Benar:
+
+B. content-id
+
+Penjelasan:
+Dalam kerangka kerja Ionic (seperti IonMenu), untuk menghubungkan komponen menu ke halaman utama (konten) yang harus dikendalikan oleh menu tersebut, Anda menggunakan atribut content-id.
+
+## Suatu item menu bisa ditetapkan untuk mengakses suatu URL tertentu dengan menggunakan ....
+
+Jawaban yang Benar:
+
+A. <ion-menu-item href="URL"></ion-menu-item>
+
+## Saat membuat layout split pane, bisa digunakan atribut when. Jika menggunakan atribut when="sm", maka berarti ....
+
+Jawaban yang Benar:
+
+A. pemisah berada pada breakpoint sm
+
+## Jika layar terlalu kecil untuk split pane, maka yang terjadi adalah ....
+
+Jawaban yang Benar:
+
+A. panel sebelah kiri akan menutupi panel sebelah kanan.
+
+## grid 
+
+Soal 1: Komponen Inti Responsive Grid
+Soal: Komponen inti yang digunakan oleh layout responsive grid adalah ....
+
+Jawaban yang Benar:
+
+B. IonGrid, IonRow, IonColumn
+
+Penjelasan:
+Sistem Grid Ionic (berdasarkan Flexbox) memerlukan struktur hierarkis untuk berfungsi:
+
+IonGrid: Ini adalah wadah utama (container) yang membungkus seluruh grid. Mirip dengan container di CSS framework lain.
+
+IonRow: Ditempatkan di dalam IonGrid. Digunakan untuk membuat baris horizontal.
+
+IonColumn (alias IonCol): Ditempatkan di dalam IonRow. Digunakan untuk membuat kolom vertikal dan menampung konten Anda.
+
+Soal 2: Mengatur Posisi Kolom dengan Offset
+Soal: Jika ingin me-render kolom mulai dari kolom ke-6, maka gunakan ....
+
+Jawaban yang Benar:
+
+B. <ion-col offset="5">
+
+Penjelasan:
+Total Kolom: Sistem Grid Ionic secara default memiliki 12 kolom.
+
+offset: Atribut ini digunakan untuk memindahkan (menggeser) kolom ke kanan dengan meninggalkan spasi kosong sebelum kolom tersebut. Nilai offset adalah jumlah kolom yang akan dikosongkan.
+
+Mulai dari Kolom ke-6: Untuk membuat kolom dimulai pada posisi kolom ke-6, Anda perlu mengosongkan 5 kolom sebelumnya.
+
+Kolom yang dikosongkan: 5 kolom (Posisi 1, 2, 3, 4, 5)
+
+Kolom dimulai: Posisi 6
+
+Perintah: <ion-col offset="5">
+
+pull (Opsi C): Digunakan untuk memindahkan kolom ke kiri (mengabaikan urutan logis).
+
+size (Opsi D): Digunakan untuk menentukan lebar kolom, bukan posisinya.
+
+Soal 3: Perhitungan Kolom dengan pull
+Soal: Pada responsive grid, jika jumlah kolom default 12, jumlah kolom yang dibuat 3, maka jika pada kolom ke-3 diberikan perintah berikut: <ion-col pull="2">, maka kolom ke-4 tersebut akan mulai berada pada ....
+
+Jawaban yang Benar:
+
+B. kolom 9
+
+Penjelasan:
+Ini adalah soal yang sedikit kompleks dan memerlukan pemahaman tentang urutan default dan efek pull.
+
+## 
+
 
 ***
 # Catatan kecil
