@@ -869,6 +869,138 @@ A. :root dan .ion-color-{WARNA}
 
 # BAB 6
 
+## IONIC STARTER
+
+[Soalnya]
+
+Berikut adalah beberapa starter yang ada pada Ionic/Vue, kecuali .... A. blank B. my-first-app C. tabs D. sidemenu
+
+Untuk menambahkan halaman pada starter Blank, hal yang perlu dilakukan adalah .... A. definisi halaman baru B. definisi halaman baru dan kemudian mengatur rute C. definisi rute D. definisi halaman baru, mengatur rute, import komponen pada App.vue
+
+[Jawabannya]
+
+B. my-first-app
+
+D. definisi halaman baru, mengatur rute, import komponen pada App.vue
+
+[Penjelasannya]
+
+Soal 1: Starter pada Ionic/Vue
+Pilihan A (blank), C (tabs), dan D (sidemenu) adalah nama-nama template starter resmi yang disediakan oleh Ionic CLI (Command Line Interface) saat membuat aplikasi baru, termasuk untuk framework Vue.
+
+Blank: Aplikasi paling dasar tanpa tata letak apa pun.
+
+Tabs: Aplikasi dengan navigasi berbasis tabs di bagian bawah.
+
+Sidemenu: Aplikasi dengan menu geser (hamburger menu) di samping.
+
+Pilihan B (my-first-app) BUKAN nama template starter, melainkan contoh nama proyek yang umum digunakan saat Anda menjalankan perintah ionic start. Nama starter yang tersedia adalah seperti blank, tabs, atau sidemenu.
+
+Soal 2: Menambahkan Halaman pada Starter Blank
+Untuk menampilkan halaman baru dalam aplikasi berbasis Vue dan Ionic, khususnya saat menggunakan starter Blank, ada tiga langkah inti yang harus dilakukan:
+
+Definisi Halaman Baru: Membuat file komponen Vue (.vue) yang akan menjadi halaman baru Anda (misalnya, membuat <template>, <script>, dan <style>).
+
+## Suatu rute dapat mempunyai rute turunan dengan mendefinisikan .... A. childComponents B. subRouter C. children D. childRouter
+
+[Jawabannya]
+
+C. children
+
+[Penjelasannya]
+
+Konsep "rute turunan" atau nested routes adalah fitur standar dalam pustaka routing populer pada ekosistem framework frontend seperti Vue Router (yang digunakan oleh Ionic/Vue) dan React Router.
+
+Penggunaan children: Dalam konfigurasi routing pada Vue Router, untuk mendefinisikan rute yang bersarang (turunan) di bawah rute utama, Anda menggunakan array dengan nama properti children.
+
+Struktur Kode (Contoh di Vue Router): Properti children didefinisikan di dalam objek rute utama dan berisi array objek-objek rute lain yang merupakan turunannya.
+
+## Untuk menampilkan link ke suatu URL tertentu, dapat menggunakan .... A. ion-router saja. B. ion-router-link saja. C. ion-link dan ion-router. D. ion-router-link dan <a href="..."></a>
+
+[Jawabannya]
+
+D. ion-router-link dan <a href="..."></a>
+
+[Penjelasannya]
+
+Kesimpulan:
+
+Karena soal menanyakan apa yang dapat digunakan untuk menampilkan link ke URL, baik ion-router-link (untuk internal) maupun elemen HTML standar <a> (untuk eksternal atau internal) adalah opsi yang valid. Oleh karena itu, pilihan D adalah yang paling lengkap dan benar secara teknis.
+
+## Lokasi dari gambar-gambar yang dipakai dalam aplikasi Ionic adalah .... A. src/assets/ B. src/data/img C. public/assets/... D. bebas
+
+[Jawabannya]
+
+A. src/assets/
+
+[Penjelasannya]
+
+Dalam struktur proyek Ionic modern (terutama saat menggunakan Vue, React, atau Angular, yang didasarkan pada build tools seperti Webpack/Vite), praktik standar dan lokasi default untuk menyimpan asset seperti gambar, font, atau file statis lainnya adalah:
+
+Meskipun C adalah lokasi yang valid untuk aset statis, A (src/assets/) adalah lokasi standar dan pilihan utama di mana developer Ionic/Vue/React menempatkan asset yang mereka impor dan gunakan dalam komponen, menjadikannya jawaban yang paling tepat untuk pertanyaan tentang lokasi default aset.
+
+## Komponen yang digunakan untuk menampilkan gambar dalam Ionic adalah .... A. IonImg B. IonImage C. IonPic D. IonPicture
+
+[Jawabannya]
+
+A. IonImg
+
+[Penjelasannya]
+
+Komponen Resmi Ionic: Ionic Framework menyediakan serangkaian komponen UI yang dioptimalkan untuk performa dan tampilan native. Untuk menampilkan gambar, komponen yang didesain dan direkomendasikan secara resmi adalah ion-img (atau IonImg saat ditulis dalam format PascalCase untuk framework seperti Vue/React).
+
+Fungsi ion-img: Komponen ini berfungsi sebagai wrapper untuk elemen HTML standar <img> tetapi menambahkan fitur-fitur seperti lazy loading dan penanganan caching yang lebih baik, membantu meningkatkan performa aplikasi seluler.
+
+Kesalahan Pilihan Lain: Pilihan B, C, dan D (IonImage, IonPic, IonPicture) bukanlah nama komponen resmi yang disediakan oleh Ionic Framework untuk menampilkan gambar.
+
+## Berikut adalah pernyataan-pernyataan yang benar tentang teknik layout grid, kecuali .... A. urutan tampilan: ion-grid - ion-row - ion-col B. jumlah kolom tiap baris harus sama. C. secara teoritis, tidak ada jumlah baris maksimal D. perulangan/looping diletakkan pada <ion-col>
+
+[Jawabannya]
+
+B. jumlah kolom tiap baris harus sama.
+
+## Jika akan melakukan looping untuk mengakses sejumlah data yang tersedia untuk menempati kolom grid, maka v-for diletakkan pada .... A. ion-grid B. ion-row C. ion-column D. ion-col
+
+[Jawabannya]
+
+D. ion-col
+
+[Penjelasannya]
+
+Struktur Grid Ionic: Struktur dasar layout grid di Ionic adalah ion-grid (wadah) yang berisi satu atau lebih ion-row (baris), dan setiap baris berisi satu atau lebih ion-col (kolom). * ion-grid: Wadah utama. Looping di sini akan membuat grid baru, bukan kolom baru.
+
+## Perbedaan antara CreateWebHistory dengan CreateWebHashHistory pada saat mendefinisikan router adalah .... A. sebenarnya sama saja, hanya beda tempat penyimpanan cache B. CreateWebHistory hanya menyimpan 1 cache, sementara CreateWebHashHistory bisa lebih dari satu C. CreateWebHistory lebih bagus dari sisi URL, bagus untuk SEO karena berpola /aaa/bbb/ccc. Sementara CreateWebHashHistory mengandung tanda #, kurang bagus untuk SEO D. CreateWebHistoy tidak disandikan, sementara CreateWebHashHistory disandikan dengan metode HashMap
+
+[Jawabannya]
+
+C. CreateWebHistory lebih bagus dari sisi URL, bagus untuk SEO karena berpola /aaa/bbb/ccc. Sementara CreateWebHashHistory mengandung tanda #, kurang bagus untuk SEO
+
+[Penjelasannya]
+
+Kedua fungsi ini (berasal dari Vue Router, yang digunakan pada Ionic/Vue) digunakan untuk menentukan mode sejarah (history mode) pada aplikasi Single Page Application (SPA).
+
+CreateWebHistory (Mode History):
+
+Menggunakan History API modern dari browser (HTML5).
+
+Pola URL: Bersih, terlihat seperti situs web tradisional, misalnya: http://localhost:8080/user/profile.
+
+Keuntungan: URL lebih clean dan sangat baik untuk Search Engine Optimization (SEO) karena crawler mesin pencari dapat dengan mudah mengindeks jalur (/user/profile).
+
+Kekurangan: Membutuhkan konfigurasi server yang tepat agar semua jalur mengarah kembali ke index (index.html) aplikasi SPA. Jika tidak, saat pengguna me-refresh halaman di jalur non-root (/user/profile), server akan mengembalikan error 404.
+
+CreateWebHashHistory (Mode Hash):
+
+Menggunakan hash (#) di URL, memanfaatkan event hashchange pada browser.
+
+Pola URL: Mengandung tanda pagar, misalnya: http://localhost:8080/#/user/profile.
+
+Keuntungan: Tidak memerlukan konfigurasi server khusus karena browser mengabaikan bagian setelah # saat meminta file dari server.
+
+Kekurangan: URL terlihat kurang profesional, dan secara historis, dianggap kurang optimal untuk SEO (meskipun Google kini lebih baik dalam mengindeks hashbangs).
+
+Kesimpulan: Pilihan C secara akurat menjelaskan perbedaan utama antara kedua mode dari sisi penampilan URL, kegunaan SEO, dan format jalur yang mereka hasilkan.
+
 
 ***
 # Catatan kecil
