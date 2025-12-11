@@ -640,6 +640,102 @@ Fitur Decorator dalam TypeScript pada dasarnya adalah fitur yang eksperimental.
 
 Untuk mengaktifkan dukungan decorator (yang diperlukan oleh library seperti vue-class-component atau vue-property-decorator), developer harus mengatur opsi kompilator "experimentalDecorators": true di dalam bagian "compilerOptions" pada file tsconfig.json.
 
+***
+# Bab 4
+
+## ionic
+
+oal Pertama: Perintah untuk Menjalankan Aplikasi Ionic
+Soal: Untuk menjalankan aplikasi Ionic, kita bisa menggunakan .... A. ionic cli B. ionic serve C. ionic start D. ionic run
+
+Jawaban
+B. ionic serve
+
+Penjelasan (Fokus pada Ionic CLI)
+Perintah ionic serve adalah perintah standar yang digunakan melalui Ionic CLI (Command Line Interface) untuk:
+
+Membangun aplikasi dalam mode pengembangan (development mode).
+
+Menjalankan aplikasi di browser secara lokal (biasanya pada http://localhost:8100).
+
+Memantau perubahan file dan memuat ulang aplikasi secara otomatis (live reload).
+
+ionic start (C) digunakan untuk membuat proyek baru, dan ionic run (D) digunakan untuk menjalankan aplikasi di perangkat nyata atau emulator.
+
+2. Soal Kedua: Kerangka Aplikasi Ionic sebagai Template
+Soal: Kerangka aplikasi Ionic yang bisa digunakan sebagai template disebut dengan .... A. starter B. template C. instance D. component
+
+Jawaban
+A. starter
+
+Penjelasan (Fokus pada Ionic CLI)
+Ketika Anda membuat proyek Ionic baru (menggunakan ionic start), Anda diminta untuk memilih Starter Template (kerangka awal).
+
+Starter ini menyediakan template aplikasi yang sudah dikonfigurasi (misalnya tabs, sidemenu, blank) dan kerangka kerja UI (framework) yang dipilih (Vue, React, atau Angular).
+
+3. Soal Ketiga: UI Framework yang BUKAN Pasangan Ionic
+Soal: Berikut adalah UI framework yang bisa digunakan bersama dengan Ionic, kecuali .... A. react B. vue C. angular D. capactior
+
+Jawaban
+D. capactior
+
+Penjelasan (Fokus pada Ionic Ecosystem)
+Ionic adalah library komponen UI yang dirancang untuk bekerja dengan UI framework utama, yaitu Vue (B), React (A), dan Angular (C).
+
+Capacitor adalah tooling (runtime) yang digunakan oleh Ionic untuk membawa aplikasi web yang sudah dibangun (menggunakan Vue, React, atau Angular) menjadi aplikasi native (iOS, Android). Capacitor adalah alat packaging (pembungkus), bukan UI framework yang digunakan untuk membangun user interface itu sendiri.
+
+## Membuat Aplikasi Ionic Berbasis Vue
+Soal: Untuk membuat aplikasi Ionic yang berbasis pada Vue, digunakan .... A. ionic cli serta ionic start dengan --type=vue B. vue cli C. ionic cli dan ionic start dengan --starter=vue D. ionic cli dan --starter=vue
+
+Jawaban
+C. ionic cli dan ionic start dengan --starter=vue
+
+Penjelasan (Fokus pada Ionic/Vue CLI)
+Untuk membuat proyek Ionic baru, Anda harus menggunakan Ionic CLI (ionic cli).
+
+Perintah untuk memulai proyek adalah ionic start.
+
+Untuk menentukan bahwa framework yang digunakan dalam proyek baru adalah Vue, Anda menggunakan opsi --type=vue atau --starter=vue (tergantung versi CLI, di mana --type atau --starter digunakan untuk menentukan framework). Pilihan C menggunakan sintaks yang paling umum, yang secara eksplisit menyebut ionic cli dan perintah lengkap ionic start dengan starter Vue.
+
+## Perintah yang benar untuk membuat aplikasi Ionic baru menggunakan UI dari Vue adalah:
+
+A. ionic start myApp tabs --type=vue
+
+## Jawaban Soal Kedua (ionic start "aplikasi saya")
+Soal: Saat membuat aplikasi Ionic menggunakan ionic start "aplikasi saya", direktori yang dihasilkan adalah ....
+
+Jawaban yang Benar:
+
+A. aplikasi-saya
+
+## (Global Error Handling di Vue/Ionic/TypeScript)
+Soal: Jika ingin menangani error secara global, bagian untuk menangani error di Ionic berada pada ....
+
+Jawaban yang Benar (Paling Umum dalam Proyek Vue 3 + TypeScript):
+
+A. src/main.ts
+
+Penjelasan:
+Dalam aplikasi Vue 3 (yang digunakan oleh Ionic CLI untuk proyek Vue):
+
+src/main.ts adalah entry point (titik masuk) utama aplikasi Anda. Di sini Anda membuat dan me-mount instance aplikasi Vue.
+
+## Mengubah Port Saat Menjalankan Aplikasi Ionic
+Soal: Untuk menjalankan aplikasi Ionic pada port tertentu, pemrogram bisa menjalankan aplikasi tersebut dengan cara ....
+
+Jawaban yang Benar:
+
+C. ionic serve --port=angka
+
+## Parameter Teks Error pada errorHandler Vue/TypeScript
+Soal: Saat mendefinisikan errorHandler, bagian yang akan berisi teks error adalah ....
+
+Jawaban yang Benar:
+
+C. err
+
+Penjelasan:
+Ketika Anda mendefinisikan global error handler di Vue 3 (app.config.errorHandler),
 
 
 ***
