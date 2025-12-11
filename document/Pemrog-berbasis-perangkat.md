@@ -1,5 +1,7 @@
 # Pemrogramahn berbasis perangkat bergerak
 
+https://github.com/playmakermz/pustaka/tree/main/document | alternative
+
 ## mengenai ASYNC
 
 <img width="750" height="415" alt="image" src="https://github.com/user-attachments/assets/7ff55c88-b1f7-496e-8dbc-c0f912645259" />
@@ -1004,6 +1006,8 @@ Kesimpulan: Pilihan C secara akurat menjelaskan perbedaan utama antara kedua mod
 
 ***
 # Catatan kecil
+
+https://github.com/playmakermz/pustaka/tree/main/document
 
 Point | Penjelasan
 --- | ---
