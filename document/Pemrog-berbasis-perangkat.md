@@ -446,11 +446,206 @@ Contoh: npm run build -- --env=production
 
 Argumen --env=production akan diteruskan kepada script build, yang kemudian dapat di-parse oleh library seperti yargs atau alat bundler.
 
-## 
+## restfull API endpoint
+
+Soal Pertama: HTTP Method yang Bukan Standar
+Soal: Berikut ini adalah HTTP method yang bisa dikirimkan ke RESTful API endpoint, kecuali .... A. GET B. PUT C. PATCH D. QUERY
+
+Jawaban
+D. QUERY
+
+Penjelasan (Fokus pada Protokol HTTP)
+Protokol HTTP mendefinisikan method standar untuk berinteraksi dengan sumber daya (resources) pada RESTful API.
+
+GET, PUT, dan PATCH semuanya adalah method HTTP standar yang digunakan untuk mengambil data, memperbarui seluruh sumber daya, dan memperbarui sebagian sumber daya, berturut-turut.
+
+QUERY bukanlah method HTTP standar yang diakui oleh RFC HTTP. Metode yang relevan seringkali adalah HEAD, POST, DELETE, OPTIONS, selain yang disebutkan di atas.
+
+2. Soal Kedua: Cara Mengambil Data JSON dari Server
+Soal: Cara mengambil data dari server dalam format JSON supaya bisa diekspos di RESTful API endpoint adalah .... A. menggunakan pustaka fs di Node.js B. menempatkan file tersebut di src/resources, maka secara otomatis akan disertakan dalam kode sumber di controller. C. langsung diambil / dibaca menggunakan import. D. menggunakan pustaka khusus untuk mengolah data JSON.
+
+Jawaban
+D. menggunakan pustaka khusus untuk mengolah data JSON.
+
+Penjelasan (Fokus pada Backend Node.js/TypeScript)
+Dalam konteks server (seperti Express.js, yang sering digunakan dengan TypeScript), RESTful API endpoint perlu mengirimkan respons JSON yang benar.
+
+## Restfull API
+
+Soal Pertama: Format Serialisasi Data sebagai Respons API
+Soal: Berikut adalah format serialisasi data yang dikirimkan sebagai respons ke client yang telah mengirimkan HTTP method dengan argumen resources .... A. harus JSON B. bisa JSON atau file-file standar di Web (HTML, CSS, PNG, dan lain-lain). C. harus JSON atau HTML atau file teks biasa. D. bisa dalam format apa saja
+
+Jawaban
+B. bisa JSON atau file-file standar di Web (HTML, CSS, PNG, dan lain-lain).
+
+Penjelasan (Fokus pada REST/HTTP)
+Meskipun JSON sangat umum digunakan untuk data terstruktur pada RESTful API, respons dari endpoint pada dasarnya adalah stream data HTTP yang memiliki Content-Type yang ditentukan.
+
+Respons dapat berupa plain text, XML, HTML (untuk server-side rendering), atau data biner seperti gambar (PNG, JPEG) atau file CSS/JavaScript. Pilihan yang paling akurat adalah bahwa respons dapat berupa JSON (data terstruktur) atau file-file standar Web (data biner atau teks).
+
+2. Soal Kedua: Hasil Berhasil (Fulfilled) dari Axios
+Soal: Jika mengirimkan request ke RESTful API endpoint menggunakan axios, maka hasilnya jika berhasil (fulfilled) adalah .... A. response.data B. response C. response berupa serialisasi JSON D. status
+
+Jawaban
+A. response.data
+
+Penjelasan (Fokus pada Axios/TypeScript)
+Ketika Axios berhasil (janji/Promise di-fulfilled), ia mengembalikan objek respons. Objek respons ini memiliki properti seperti status, headers, dan data.
+
+Properti response.data berisi payload (isi) dari respons server, yang merupakan data yang sebenarnya Anda butuhkan (biasanya objek JSON yang telah di-parse menjadi objek JavaScript/TypeScript).
+
+3. Soal Ketiga: Penempatan Kode Sumber Koneksi Data di Vue
+Soal: Dalam instan aplikasi Vue, kode sumber untuk koneksi pengambilan data ke RESTful API endpoint diletakkan pada .... A. di src/index.ts B. di semua komponen dan bagian yang memerlukan data dari RESTful API endpoint C. di direktori root src/ saja D. di src/components
+
+Jawaban
+B. di semua komponen dan bagian yang memerlukan data dari RESTful API endpoint
+
+Penjelasan (Fokus pada Vue.js/Arsitektur)
+Meskipun best practice adalah menggunakan layanan terpisah (service layer atau store seperti Pinia/Vuex) untuk mengelola logika fetching API, implementasi kode yang memicu pengambilan data (misalnya, memanggil apiService.fetchData()) pada akhirnya diletakkan di komponen (<script>) atau bagian aplikasi (store, router guard) yang secara langsung membutuhkan data tersebut.
+
+Oleh karena itu, kode koneksi (atau pemanggilan fungsi koneksi) tersebar di semua bagian aplikasi yang memerlukan interaksi dengan API.
+
+## Memeriksa Tipe Data dari Endpoint
+Soal: Jika ingin memeriksa tipe dari data yang berasal dari suatu endpoint, kita bisa menggunakan .... A. response.headers['content-type'] B. response.header['content-type'] C. response.headers['file-type'] D. response.header['file-type']
+
+Jawaban
+A. response.headers['content-type']
+
+Penjelasan (Fokus pada HTTP Protocol/Axios)
+Ketika client (seperti yang dibuat dengan Vue.js dan TypeScript menggunakan Axios) menerima respons dari API endpoint, informasi tentang jenis data yang diterima (misalnya JSON, XML, atau teks) selalu terkandung dalam HTTP Response Headers.
+
+## Alternatif Penggunaan RESTful API
+Soal: Selain menggunakan RESTful API untuk endpoint, pemrogram juga bisa menggunakan .... A. Apache Flink B. Event processing C. GraphQL D. Service Oriented Architecture
+
+Jawaban
+C. GraphQL
+
+Penjelasan (Fokus pada Konsep API)
+RESTful API adalah gaya arsitektur yang sangat umum, namun memiliki alternatif utama dalam dunia backend dan client-side (seperti Vue.js/TypeScript).
+
+GraphQL adalah bahasa kueri untuk API dan runtime untuk memenuhi kueri tersebut dengan data yang ada. Keuntungan utamanya adalah client dapat meminta hanya data yang mereka butuhkan, yang menjadikannya alternatif yang populer dan efisien untuk REST, terutama pada aplikasi mobile seperti yang dibuat dengan Ionic.
+
+## Menampilkan Data JSON dari Endpoint ke Halaman Web (Vue)
+Soal: Hasil request ke endpoint dengan format JSON bisa ditampilkan ke halaman Web dengan cara .... A. langsung dikonversikan ke list yang bisa diakses oleh Vue B. langsung dimasukkan ke template menggunakan <script>...</script> C. langsung dimasukkan ke array untuk ditampilkan ke template menggunakan v-for D. dikonversikan terlebih dahulu ke TypedArray, setelah itu baru masukkan ke template
+
+Jawaban
+C. langsung dimasukkan ke array untuk ditampilkan ke template menggunakan v-for
+
+Penjelasan (Fokus pada Vue.js Reaktivitas)
+Ketika Vue/Axios menerima respons JSON dari endpoint, data JSON tersebut secara otomatis di-parse menjadi objek atau array JavaScript/TypeScript (misalnya, response.data).
+
+## Kegunaan Decorator
+Soal: Decorator digunakan untuk .... A. mengubah arah eksekusi di Vue B. Metadata Programming C. mengatur supaya nilai kembalian di Vue sesuai dengan yang diinginkan pemrogram D. meniadakan subclassing yang tidak diperlukan.
+
+Jawaban
+B. Metadata Programming
+
+Penjelasan (Fokus pada TypeScript)
+Decorator adalah fitur eksperimental (tapi umum digunakan) di TypeScript yang memungkinkan Anda menambahkan anotasi dan sintaks metaprogramming ke kelas, method, properti, atau parameter.
+
+Tujuannya adalah untuk Metaprogramming—yaitu, menulis kode yang memproses atau memanipulasi kode lain (seperti menambahkan metadata atau perilaku tambahan) pada waktu desain (design time). * Dalam konteks Vue dan TypeScript, Decorator seperti @Component digunakan untuk secara otomatis membaca dan memproses metadata kelas dan mengubahnya menjadi objek opsi komponen Vue standar.
+
+2. Soal Kedua: Penggantian @Component di Vue-Class-Component v8.x.x
+Soal: Pada vue-class-component versi 8.x.x, @Component digantikan dengan .... A. @Class B. @Options C. @VueClass D. @VueComponent
+
+Jawaban
+D. @VueComponent
+
+Penjelasan (Fokus pada Vue.js/TypeScript)
+Dalam upaya untuk meningkatkan kompatibilitas dengan Vue 3 dan mengadopsi penamaan yang lebih jelas, library vue-class-component (yang memungkinkan penulisan komponen Vue menggunakan kelas TypeScript) mengganti decorator utama @Component menjadi @VueComponent pada versi 8.x.x.
+
+## Vue dan vue ke ts
+Soal Pertama: Implikasi Penggunaan Sintaks Kelas Vue-CLI
+Soal: Saat menggunakan vue-cli, implikasi dari menjawab Yes untuk penggunaan sintaksis model kelas untuk komponen di proyek Vue adalah .... A. pemrograman tidak bisa menggunakan @Component karena harus diganti dengan class B. pemrograman bisa memilih versi vue-class-component C. paket vue-class-component versi stabil di-install dan bisa digunakan D. paket vue-class-component versi terakhir / beta di-install dan bisa digunakan.
+
+Jawaban
+D. paket vue-class-component versi terakhir / beta di-install dan bisa digunakan.
+
+Penjelasan (Fokus pada Vue.js/TypeScript Tooling)
+Ketika Vue CLI menanyakan apakah akan menggunakan sintaks kelas (class model), ini menyiapkan proyek untuk menggunakan TypeScript bersama dengan library vue-class-component (atau sejenisnya).
+
+Vue CLI cenderung menginstal versi library yang paling baru atau yang direkomendasikan saat itu, yang seringkali merupakan versi terbaru/beta agar sesuai dengan fitur Vue 3. Class Model memungkinkan developer Vue/TypeScript untuk menulis komponen dengan sintaks kelas yang lebih familiar bagi developer berorientasi objek.
+
+2. Soal Kedua: Migrasi Proyek JavaScript Skala Besar ke TypeScript
+Soal: Dalam kaitan dengan migrasi proyek ke TypeScript, jika pemrogram sudah mempunyai aplikasi Vue berbasis JavaScript skala besar, maka sebaiknya .... A. ubah secara bertahap ke TypeScript dengan menambahkan fitur TypeScript dan kemudian sedikit demi sedikit mengubah secara manual B. ubah secara bertahap ke TypeScript dengan menambahkan fitur TypeScript dan ubah semua file .js ke .ts melalui vue-clie C. langsung saja tambahkan fitur TypeScript D. gunakan konfigurasi dari Babel
+
+Jawaban
+A. ubah secara bertahap ke TypeScript dengan menambahkan fitur TypeScript dan kemudian sedikit demi sedikit mengubah secara manual
+
+Penjelasan (Fokus pada TypeScript/Migrasi)
+Migrasi aplikasi skala besar dari JavaScript ke TypeScript sekaligus (misalnya, mengubah semua file .js ke .ts sekaligus) sangat berisiko dan akan menghasilkan banyak error kompilasi.
+
+## Penempatan Event Handler pada Sintaks Kelas Vue
+Soal: Pada sintaksis berbasis class, event handler diletakkan pada .... A. @Options B. @Component C. definisi class yang default akan di-export D. <script>...</script>
+
+Jawaban
+C. definisi class yang default akan di-export
+
+Penjelasan (Fokus pada Vue.js/TypeScript Class Component)
+Ketika menggunakan sintaks berbasis kelas (Class-based component) di Vue (misalnya, dengan vue-class-component atau Composition API dengan <script setup> yang lebih baru), event handler (seperti fungsi yang dipanggil oleh @click)
+
+## Penempatan props pada Sintaks Kelas Vue (@)
+Soal: Pada sintaksis berbasis class, props diletakkan pada .... A. <script>...</script> B. definisi class C. @Component jika di vue-class-component versi 7.x.x D. @Options jika di vue-class-component versi 8.0.0
+
+Jawaban
+B. definisi class (atau C, jika menggunakan decorator spesifik)
+
+Penjelasan (Fokus pada Vue.js/TypeScript)
+Dalam sintaks kelas Vue (menggunakan Class Component Decorator atau Composition API), props didefinisikan sebagai properti kelas itu sendiri.
+
+Pendekatan Class Component Lama (Opsional): Dalam vue-class-component versi lama, props sering didefinisikan di dalam decorator @Component atau @Options (misalnya, @Component({ props: {...} })).
+
+Pendekatan Class Component Baru/Vue 3: Props didefinisikan menggunakan decorator @Prop pada properti di dalam definisi class.
+
+Karena pilihan B adalah yang paling umum dan akurat untuk mendefinisikan props sebagai properti yang typable di TypeScript, dan C/D mengacu pada versi library spesifik, definisi class adalah tempat fisik di mana properti props diletakkan.
+
+2. Soal Kedua: Mengakses Data @Options di Sintaks Kelas
+Soal: Supaya data yang didefinisikan di @Options bisa diakses di class, maka .... A. harus didefinisikan di class dengan menggunakan tanda ! B. harus diawali dengan this.$data C. harus diletakkan di constructor D. harus didefinisikan ulang secara persis menggunakan method data pada class
+
+Jawaban
+D. harus didefinisikan ulang secara persis menggunakan method data pada class
+
+Penjelasan (Fokus pada Vue.js/TypeScript)
+Dalam implementasi vue-class-component yang lebih lama (sebelum migrasi ke Vue 3/Composition API), ada dua cara untuk mendefinisikan state reaktif:
+
+Menggunakan sintaks kelas dengan properti kelas (lebih disukai).
+
+Menggunakan opsi data tradisional Vue yang dimasukkan melalui decorator (misalnya, @Options({ data() { return { ... } } })).
+
+Jika data didefinisikan melalui opsi data tradisional (method data() yang dikembalikan sebagai objek), maka data tersebut akan digabungkan (mixed in) ke dalam instansi kelas. Untuk memastikan type checking yang benar dan ketersediaan di dalam class TypeScript, developer terkadang perlu mendefinisikan ulang properti tersebut di dalam kelas itu sendiri. Namun, dalam konteks Vue-CLI modern, state reaktif didefinisikan langsung sebagai properti kelas.
+
+Berdasarkan pilihan yang ada, jika @Options digunakan, dan kita ingin data tersebut terikat ke class secara eksplisit, method data adalah tempat tradisional Vue Options API untuk mendefinisikan state.
+
+## Proyek vue dan decorator
+
+Soal Pertama: Membuat Proyek Vue Baru dengan TypeScript
+Soal: Untuk membuat proyek baru berbasis TypeScript menggunakan vue-cli, sebaiknya kita pilih .... A. "manually select features" dan kemudian memilih TypeScript B. menggunakan preset Vue 3 secara otomatis sudah menyertakan TypeScript C. menggunakan preset Vue 3 kemudian install fitur tambahan TypeScript D. sementara menggunakan preset Vue 2 karena Vue 3 belum stabil
+
+Jawaban
+A. "manually select features" dan kemudian memilih TypeScript
+
+Penjelasan (Fokus pada Vue-CLI/TypeScript)
+Ketika menjalankan vue create <nama-proyek>, Vue CLI akan menampilkan pilihan preset.
+
+Untuk memastikan konfigurasi proyek menyertakan TypeScript dan tooling terkait lainnya (seperti unit testing atau router), pilihan yang paling tepat adalah "Manually select features". Di sana, developer dapat secara eksplisit memilih fitur TypeScript untuk diintegrasikan ke dalam proyek Vue.
+
+2. Soal Kedua: Mengaktifkan Decorator di tsconfig.json
+Soal: Suatu proyek berbasis Vue 3 dan TypeScript akan membaca file tsconfig.json. Di dalam file tersebut harus didefinisikan fasilitas untuk decorator, yaitu .... A. "experimentalDecorator": true B. "decorators": true C. "decorator": true D. "experimentalDecorators": true
+
+Jawaban
+D. "experimentalDecorators": true
+
+Penjelasan (Fokus pada TypeScript)
+Fitur Decorator dalam TypeScript pada dasarnya adalah fitur yang eksperimental.
+
+Untuk mengaktifkan dukungan decorator (yang diperlukan oleh library seperti vue-class-component atau vue-property-decorator), developer harus mengatur opsi kompilator "experimentalDecorators": true di dalam bagian "compilerOptions" pada file tsconfig.json.
+
+
 
 ***
 # Catatan kecil
 
 Point | Penjelasan
 --- | ---
- webview | Komponen yang selalu disertakan dalam bundle aplikasi hybrid adalah:
+ Komponen yang selalu disertakan dalam bundle aplikasi hybrid adalah | :  webview 
+ REST | adalah singkatan dari Representational State Transfer.
