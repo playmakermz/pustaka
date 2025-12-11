@@ -183,14 +183,103 @@ Pemrogram bisa mendefinisikan berbagai kode sumber yang bisa dijalankan pada sua
 
 A. component hooks B. component filtering C. component creation D. lifecycle hooks.
 
-# 2.33
-
 Jawaban
 D. lifecycle hooks.
 
 Penjelasan (Fokus pada Vue.js/Ionic)
 Dalam framework modern seperti Vue.js dan Ionic (yang sering menggunakan konsep komponen yang sama), setiap komponen atau instan aplikasi memiliki siklus hidup (yaitu tahapan dari saat dibuat hingga dihancurkan).
 
+## Fungsi untuk Membuat Rute (Vue Router)
+Soal: Untuk membuat routing, kita bisa menggunakan paket Vue Router. Dalam paket tersebut, terdapat fungsi untuk membuat rute, yaitu .... A. createRouter B. createRoute C. createRoutes D. addRoute
+
+Jawaban: A. createRouter
+
+Penjelasan (Fokus pada Vue.js): Dalam Vue Router versi 4 (standar untuk Vue 3 dan sering digunakan dengan proyek TypeScript), fungsi yang harus di-import dari paket vue-router untuk membuat instansi router adalah createRouter.
+
+## Elemen untuk Menampilkan Routing
+Soal: Elemen yang digunakan untuk menampilkan routing adalah .... A. router-link B. router-view C. route-link D. route-view
+
+Jawaban: B. router-view
+
+Penjelasan (Fokus pada Vue.js): Komponen <router-view> adalah elemen placeholder wajib dari Vue Router. Elemen ini berfungsi sebagai lokasi di mana komponen Vue yang sesuai dengan URL saat ini akan dirender atau ditampilkan.
+
+## Atribut :to pada Vue Router
+Soal: Atribut berikut ini :to="{ name: 'Awal' }" adalah .... A. variabel untuk view B. variabel untuk template C. direktif D. named router
+
+Jawaban
+D. named router
+
+Penjelasan (Fokus pada Vue.js/Vue Router)
+Atribut :to="{ name: 'Awal' }" digunakan pada komponen <router-link> dalam Vue Router.
+
+Titik dua (:) di depan to menunjukkan v-bind atau shorthand untuk binding atribut dinamis, artinya nilai yang diberikan adalah ekspresi JavaScript.
+
+Nilai yang diberikan ({ name: 'Awal' }) adalah objek yang mengacu pada sebuah rute yang telah didefinisikan dalam konfigurasi Vue Router menggunakan nama rute (name: 'Awal'), bukan jalurnya (path) secara langsung.
+
+## Mengakses Route Parameter di Template Vue
+Soal: Jika di dalam router didefinisikan /pegawai/:npp, maka kita bisa mengakses nilai npp di template menggunakan .... A. $router.params.npp B. $route.params.npp C. router.params.npp D. router.param.npp
+
+Jawaban
+B. $route.params.npp
+
+Penjelasan (Fokus pada Vue.js/Vue Router)
+$route vs. $router:
+
+$router (dengan R besar) adalah instansi router global (digunakan untuk programmatic navigation seperti $router.push(...)).
+
+$route (dengan R kecil) adalah objek rute yang aktif saat ini dan berisi informasi spesifik rute, termasuk path, query, dan parameter (params).
+
+## Berikut adalah direktif yang digunakan untuk kondisional, kecuali .... A. v-if B. v-if-else C. v-bind D. v-show
+
+Jawaban
+C. v-bind
+
+Penjelasan (Fokus pada Vue.js)
+Dalam Vue.js, direktif (arahan) digunakan untuk memanipulasi DOM.
+
+Direktif Kondisional: Direktif yang mengontrol apakah suatu elemen akan dirender atau ditampilkan berdasarkan kondisi Boolean.
+
+v-if dan v-if-else: Digunakan untuk rendering kondisional. Elemen benar-benar dihapus/ditambahkan dari DOM.
+
+v-show: Digunakan untuk menampilkan/menyembunyikan elemen dengan memanipulasi properti CSS display. Elemen tetap ada di DOM.
+
+## Direktif untuk Menampilkan Array (Looping)
+Soal: Untuk menampilkan suatu array, digunakan direktif .... A. v-model B. v-array C. v-for D. v-bind:array
+
+Jawaban
+C. v-for
+
+Penjelasan (Fokus pada Vue.js)
+Direktif v-for dalam Vue.js dirancang khusus untuk melakukan iterasi atau looping melalui daftar data (array atau objek) dan merender sekumpulan elemen atau komponen berdasarkan data tersebut. * Contoh penggunaan: <li v-for="item in arrayData" :key="item.id">{{ item.nama }}</li>
+
+A. v-model: Digunakan untuk two-way data binding pada elemen formulir (form input).
+
+B. v-array: Bukan direktif Vue.js yang standar.
+
+D. v-bind:array: Digunakan untuk mengikat nilai array ke atribut HTML atau prop komponen, bukan untuk menampilkan seluruh isinya melalui looping.
+
+## Interpolasi Teks yang Valid
+Soal: Berikut adalah interpolasi teks yang valid dalam template, kecuali .... A. {{ nama }} B. {{ ok ? 'Ya' : 'Tidak' }} C. {{ pesan.toLowerCase() }} D. <p v-text></p>
+
+Jawaban
+D. <p v-text></p>
+
+Penjelasan (Fokus pada Vue.js)
+Interpolasi Teks dalam template Vue.js adalah penggunaan kurung kurawal ganda ({{ ... }}) untuk menampilkan data. Ekspresi di dalamnya harus diselesaikan menjadi nilai string.
+
+## CSS Scoped pada Template Vue
+Soal: Untuk memastikan bahwa CSS untuk template hanya berlaku pada template tersebut, gunakan .... A. <style v-scoped=true> B. <style scoped> C. <style v-private=true> D. <style v-protected=true>
+
+Jawaban
+B. <style scoped>
+
+Penjelasan (Fokus pada Vue.js)
+CSS Scoped: Dalam Single-File Component (SFC) Vue (.vue file), menambahkan atribut scoped pada tag <style> akan secara otomatis membatasi aturan CSS hanya berlaku pada elemen yang ada di dalam template komponen saat ini. * Vue.js mencapai ini dengan menambahkan atribut data unik (e.g., data-v-xxxxxx) ke elemen template dan juga ke selector CSS yang dikompilasi, sehingga mencegah style tersebut "bocor" (leak) ke komponen lain.
+
+
+
+
+# 2.33 
 ***
 # Catatan kecil
 
