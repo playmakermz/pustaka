@@ -833,7 +833,41 @@ B. kolom 9
 Penjelasan:
 Ini adalah soal yang sedikit kompleks dan memerlukan pemahaman tentang urutan default dan efek pull.
 
-## 
+## Pengaturan jumlah kolom maksimal dalam suatu grid pada variables.css diatur menggunakan ....
+
+Jawaban yang Benar:
+
+A. --ion-grid-columns
+
+## Jika pemakai menggunakan device Android, maka mode yang digunakan adalah ...." dengan pilihan jawaban: A. sm, B. md, C. xs, D. android.
+
+Dalam konteks pengembangan aplikasi hybrid menggunakan Ionic (yang sering dikombinasikan dengan Vue.js dan TypeScript), Ionic secara otomatis mendeteksi platform yang digunakan (misalnya Android atau iOS) dan menerapkan styling dan mode yang sesuai.
+
+Mode di Ionic mengacu pada tampilan dan nuansa (look and feel) komponen, yang biasanya disesuaikan agar sesuai dengan pedoman desain platform tertentu.
+
+Secara default, jika aplikasi Ionic berjalan di perangkat Android, mode yang digunakan adalah 'md' (Material Design).
+
+Jika berjalan di perangkat iOS, mode yang digunakan adalah 'ios'.
+
+Pilihan 'xs' dan 'sm' adalah breakpoint ukuran layar (ekstra kecil dan kecil) yang biasa digunakan dalam sistem grid, bukan mode platform.
+
+Oleh karena itu, jawaban yang paling tepat berdasarkan konvensi Ionic adalah:
+
+B. md
+
+## ntuk mendefinisikan warna baru untuk keseluruhan aplikasi, definisi dilakukan pada ....
+
+untuk mendefinisikan warna baru untuk keseluruhan aplikasi (sehingga dapat digunakan oleh komponen Ionic) adalah:
+
+A. :root dan .ion-color-{WARNA}
+
+:root: Tempat untuk mendefinisikan Variabel CSS global (misalnya --ion-color-spesial: #ff0000;).
+
+.ion-color-{WARNA}: Kelas helper yang harus dibuat Ionic agar komponen-komponennya dapat mengenali dan menerapkan warna tersebut saat properti color="{WARNA}" digunakan.
+
+***
+
+# BAB 6
 
 
 ***
