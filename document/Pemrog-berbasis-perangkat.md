@@ -1,4 +1,4 @@
-# Pemrogramahn berbasis perangkat bergerak
+<img width="817" height="688" alt="image" src="https://github.com/user-attachments/assets/c5f51c5a-2607-41ff-9def-bb38f4236e8e" /># Pemrogramahn berbasis perangkat bergerak
 
 ## mengenai ASYNC
 
@@ -277,9 +277,97 @@ Penjelasan (Fokus pada Vue.js)
 CSS Scoped: Dalam Single-File Component (SFC) Vue (.vue file), menambahkan atribut scoped pada tag <style> akan secara otomatis membatasi aturan CSS hanya berlaku pada elemen yang ada di dalam template komponen saat ini. * Vue.js mencapai ini dengan menambahkan atribut data unik (e.g., data-v-xxxxxx) ke elemen template dan juga ke selector CSS yang dikompilasi, sehingga mencegah style tersebut "bocor" (leak) ke komponen lain.
 
 
+# Event Modifier untuk Satu Kali Event
+Soal: Modifier yang digunakan untuk menangani event hanya sekali saja adalah .... A. .stopFirst B. .first C. .stopAfterFirst D. .once
+
+Jawaban
+D. .once
+
+Penjelasan (Fokus pada Vue.js)
+Dalam Vue.js, Anda dapat menggunakan Event Modifiers (seperti .stop, .prevent, dll.) pada direktif v-on (atau shorthand-nya @) untuk memodifikasi perilaku event DOM.
+
+.once adalah modifier yang memastikan bahwa event handler yang terkait hanya akan dipanggil satu kali saja. Setelah event dipicu dan handler dijalankan, listener akan
+
+## Deskripsi Handler yang Benar (Vue.js Events)
+Soal: Berikut adalah contoh deskripsi handler yang benar, kecuali .... A. "<template></template>" B. "counter += 1, funct1(2, 1)" C. "counter += 1, next += 1" D. "func1(2, 1), func2()"
+
+Jawaban
+A. "<template></template>"
+
+Penjelasan (Fokus pada Vue.js Events)
+Event handler yang didefinisikan pada direktif v-on (atau @ seperti @click, @change) harus berupa ekspresi JavaScript yang valid atau nama fungsi (method) yang ada di komponen. * B, C, D (Valid): Semua opsi ini adalah ekspresi JavaScript valid yang terdiri dari satu atau lebih pernyataan yang dipisahkan oleh koma (misalnya, menetapkan nilai (counter += 1) atau memanggil fungsi (funct1(2, 1))). Ini sering digunakan saat handler didefinisikan secara inline di template.
+
+## Definisi Single File Component (SFC)
+Soal: Meletakkan unsur-unsur template, script, serta style dalam satu file disebut dengan .... A. component definition B. component registration C. separation of concerns D. single file components
+
+Jawaban
+D. single file components
+
+Penjelasan (Fokus pada Vue.js)
+Single File Component (SFC) adalah format file khas Vue.js (ekstensi .vue) di mana definisi komponen (logika script), struktur tampilan (template), dan style (CSS) ditempatkan bersama dalam satu file yang terstruktur. * Konsep ini sangat sentral dalam pengembangan modern Vue, termasuk ketika menggunakan TypeScript dan membangun aplikasi dengan Ionic (yang didasarkan pada komponen).
 
 
-# 2.33 
+## Penempatan Fungsi untuk Perubahan Reaktif
+Soal: Supaya setiap perubahan atau pembaharuan bisa langsung mempunyai efek, maka sebaiknya suatu function diletakkan di .... A. created B. methods C. computed D. data()
+
+Jawaban
+C. computed
+
+Penjelasan (Fokus pada Vue.js Reaktivitas)
+Dalam Vue.js, jika suatu fungsi atau properti data menghasilkan nilai yang bergantung pada perubahan data reaktif lainnya, fungsi tersebut harus ditempatkan di computed properti.
+
+Computed Properties secara otomatis mendeteksi dependensi reaktif. Kapan pun dependensi data berubah, fungsi computed akan dijalankan ulang, memastikan hasil pembaharuan segera berlaku (immediate effect). * methods (B) adalah untuk menjalankan fungsi secara manual (misalnya, melalui event @click) dan tidak memiliki caching atau ketergantungan reaktif otomatis seperti computed.
+
+## Perbedaan computed dengan methods
+Soal: Salah satu perbedaan antara computed dengan methods adalah .... A. computed harus menghasilkan nilai kembalian, sementara methods tidak perlu. B. computed digunakan untuk elemen tertentu saja, sementara methods bisa untuk semua elemen. C. computed tidak perlu di-bind, sementara methods harus di-bind. D. computed bisa menggunakan argument, sementara methods tidak bisa.
+
+Jawaban
+A. computed harus menghasilkan nilai kembalian, sementara methods tidak perlu.
+
+Penjelasan (Fokus pada Vue.js)
+Perbedaan utama yang paling akurat di antara opsi yang tersedia adalah:
+
+Computed: Fungsi computed harus selalu mengembalikan nilai (return value) karena tujuannya adalah menghasilkan properti data baru dari properti data yang sudah ada. Fungsi ini bertindak seperti properti yang di-cache.
+
+Methods: Fungsi di dalam methods tidak harus menghasilkan nilai kembalian; fungsinya mungkin hanya menjalankan efek samping (side effect) seperti memanggil API atau memodifikasi properti data lain.
+
+***
+# Bab 3
+
+## YARGS
+Soal Pertama: Pustaka untuk Mengelola Argumen CLI (Kecuali)
+Soal: Berikut adalah berbagai pustaka yang bisa digunakan untuk mengelola argumen dari command line, kecuali .... A. commandliner B. commander C. yargs D. minimalist
+
+Jawaban
+A. commandliner
+
+Penjelasan (Fokus pada Tooling)
+Pilihan B (commander), C (yargs), dan D (minimalist - kemungkinan merujuk pada minimist) adalah library Node.js yang sangat populer dan umum digunakan untuk mem-parsing argumen command line (command line arguments).
+
+commandliner bukanlah nama paket standar atau umum yang dikenal dalam ekosistem Node.js/TypeScript untuk tujuan ini.
+
+2. Soal Kedua: Argumen Wajib di yargs
+Soal: Untuk memastikan bahwa suatu opsi argumen di yargs wajib, gunakan .... A. optionalDemand = true; B. optionalArgument = false; C. demandOption = true; D. demandArgument = false;
+
+Jawaban
+C. demandOption = true;
+
+Penjelasan (Fokus pada Tooling)
+Dalam library yargs, properti yang digunakan untuk menandai suatu opsi sebagai wajib (required) adalah demandOption.
+
+Nilai harus diatur ke true untuk memberlakukan persyaratan ini.
+
+3. Soal Ketiga: Mengambil Argumen di yargs
+Soal: Untuk mengambil argumen di yargs (dengan asumsi argv adalah instan dari yargs), bisa menggunakan .... A. argv['nama'] B. argv.prototype.nama C. argv.nama D. argv[urutan]
+
+Jawaban
+C. argv.nama
+
+Penjelasan (Fokus pada Tooling)
+Ketika yargs telah mem-parsing argumen command line, hasil parsing (yang disimpan dalam variabel seperti argv) adalah objek yang propertinya sesuai dengan nama-nama argumen (atau alias-nya).
+
+Argumen yang di-parse dapat diakses langsung sebagai properti pada objek argv menggunakan notasi titik, misalnya argv.nama, di mana nama adalah nama opsi yang didefinisikan atau diberikan oleh pengguna.
+
 ***
 # Catatan kecil
 
