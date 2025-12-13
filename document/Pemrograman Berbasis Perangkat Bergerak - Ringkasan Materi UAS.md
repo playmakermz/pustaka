@@ -1,5 +1,7 @@
 # Pemrograman Berbasis Perangkat Bergerak - Ringkasan Materi UAS
 
+# Ringkasan singkat
+
 ## BAB 1: Dasar-Dasar Asynchronous Programming
 
 ### Promise Chaining
@@ -729,6 +731,43 @@ app.config.errorHandler = (err, instance, info) => {
 **Alternatif:** REST API - memungkinkan client meminta data spesifik yang dibutuhkan
 
 ---
+
+***
+# Ringkasan panjang
+***
+
+## 1.1 
+
+Saat ini tersedia 2 platform besar untuk perangkat *mobile* yaitu Android serta iOS. Android menempati pangsa pasar tertinggi di seluruh dunia. Aplikasi untuk Android dikembangkan dengan menggunakan 2 teknik, yaitu *native* dan *hybrid*.
+
+Aplikasi *native* adalah aplikasi yang dikembangkan secara langsung untuk dijalankan secara langsung dengan menggunakan ART (*Android Runtime*).
+
+Aplikasi *hybrid* menyertakan *browser engine* di dalam aplikasi. *Browser engine* tersebut berfungsi untuk menghasilkan tampilan berbasis spesifikasi teknologi Web (HTML, CSS, JavaScript). Guna mendapatkan akses aras/level rendah/sistem, aplikasi *hybrid* menggunakan perangkat pembantu yang disebut *Native API plugins*.
+
+Salah satu *framework* yang dapat digunakan untuk mengembangkan aplikasi *hybrid* adalah Ionic. Ionic memungkinkan seseorang pengembang aplikasi untuk dapat membangun aplikasi dengan menggunakan spesifikasi teknologi *Web* serta memakai *framework* antarmuka Angular, React, atau Vue; dengan menggunakan JavaScript dan/atau TypeScript sebagai bahasa pemrograman untuk Ionic.
+
+## 1.2
+
+
+TypeScript adalah bahasa pemrograman yang merupakan superset dari JavaScript. TypeScript mengenali dan dapat memproses sintaksis JavaScript. TypeScript melakukan berbagai penambahan pada sintaksis JavaScript sehingga berbagai kelemahan JavaScript yang selama ini menjadi keluhan dari berbagai pengembangan perangkat lunak dapat diperbaiki.
+
+Kode sumber TypeScript akan dikompilasi menjadi JavaScript yang dapat dijalankan dengan menggunakan Node.js. Kompilator TypeScript dapat digunakan untuk mengompilasi kode sumber JavaScript maupun TypeScript.
+
+Sebagai suatu bahasa pemrograman, TypeScript juga mempunyai konstruksi tersendiri yang sebenarnya merupakan perluasan dari JavaScript. Beberapa hal yang diubah dan diperbaiki dari JavaScript antara lain adalah penggunaan static typing dalam kode sumber, berbagai tipe data, penggunaan let dan variable scoping, OOP, interface, serta fasilitas modul. Kegiatan belajar ini mempelajari berbagai sintaks dan konstruksi dasar dari TypeScript, terutama bagian-bagian yang membedakan dengan JavaScript.
+
+## 1.3 
+
+Asynchronous programming atau non-blocking I/O adalah teknik pemrograman untuk mengantisipasi kemungkinan akan terjadi atau tidak terjadi sesuatu hal pada saat yang akan datang serta untuk mengerjakan proses secara konkuren jika dirasakan latensi untuk bagian tertentu akan signifikan (antara lain karena akses I/O). TypeScript mengantisipasi kedua hal tersebut dengan menggunakan konstruksi Promise serta async/await.
+
+Suatu aplikasi pada umumnya terdiri atas sisi client/frontend maupun server/backend. Selain fullstack, TypeScript dapat juga digunakan hanya pada salah satu sisi saja. Jika digunakan sebagai backend, maka TypeScript akan digunakan untuk mengekspos suatu data dengan menggunakan protokol tertentu, yaitu RESTful API dan/atau GraphQL.
+
+Dengan menggunakan RESTful API sebagai backend, maka TypeScript hanya memerlukan http server saja. Salah satu framework yang dapat digunakan untuk penyediaan http server untuk mengekspos suatu endpoint tertentu adalah Express. Express dapat diakses menggunakan TypeScript dengan mengatur paket-paket tertentu (menggunakan package.json) serta mengatur konfigurasi TypeScript dengan menggunakan tsconfig.json.
+
+## 2.1 
+
+Vue merupakan *framework* yang progresif dan bisa digunakan bersama dengan *framework* lainnya. Fungsi utama dari Vue adalah untuk membangun tampilan *frontend* maupun untuk membangun SPA (*Single-Page Application*). Vue bisa diinstal dengan menggunakan 3 cara: vue/cli, CDN, serta npm. Vue mempunyai fitur utama *rendering* deklaratif (didefinisikan apa yang diinginkan, dan bukan langkah-langkah yang harus dilakukan), direktif dan *event listener* untuk interaksi dengan pemakai aplikasi, struktur kendali, serta pembuatan komponen-komponen yang didefinisikan dengan menggunakan tag HTML.
+
+Semua aplikasi Vue dan komponen yang berada di dalamnya merupakan instan yang berada dalam suatu *lifecycle* tertentu. Vue mendefinisikan *lifecycle hooks* yang memungkinkan pemrogram untuk menambahkan kode sumber pada suatu tahap tertentu di *lifecycle*.
 
 ## TIPS UJIAN
 
