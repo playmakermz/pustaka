@@ -769,6 +769,18 @@ Vue merupakan *framework* yang progresif dan bisa digunakan bersama dengan *fram
 
 Semua aplikasi Vue dan komponen yang berada di dalamnya merupakan instan yang berada dalam suatu *lifecycle* tertentu. Vue mendefinisikan *lifecycle hooks* yang memungkinkan pemrogram untuk menambahkan kode sumber pada suatu tahap tertentu di *lifecycle*.
 
+## 2.2
+
+Navigasi dalam suatu tampilah di Vue diwujudkan dalam bentuk router. Vue menyediakan suatu pustaka khusus untuk mengelola router, yaitu: Vue Router. Vue juga menyediakan fasilitas untuk membuat tampilan berdasarkan template. Template bekerja dengan interpolasi teks dengan isi dari data maupun ekspresi JavaScript. Template berupa elemen HTML dan merupakan elemen yang valid dari HTML maupun XML.
+
+Dalam elemen tersebut, Vue juga menyediakan direktif yang digunakan untuk melakukan sesuatu terkait dengan elemen HTML yang didefinisikan bersama direktif tersebut. Beberapa direktif digunakan antara lain untuk data binding. Data binding bisa digunakan untuk property, array, hal-hal yang sifatnya kondisional, serta class dan style.
+
+## 2.3
+
+Suatu event adalah kejadian yang muncul dan terkait dengan aktivitas di antarmuka pemakai. Tidak semua event harus ditangani, hanya yang dikehendaki oleh pemrogram saja. Vue mempunyai fasilitas untuk menangani event tersebut dalam bentuk event handler yang bisa diwujudkan dalam bentuk ekspresi JavaScript maupun fungsi; baik fungsi yang dengan atau tanpa argumen maupun fungsi yang hanya berjumlah satu maupun lebih dari satu. Selain itu, Vue juga memungkinkan mengakses DOM secara langsung. Jika dikehendaki, Vue menyediakan modifier bagi direktif untuk penanganan elemen lebih lanjut.
+
+Komponen pada Vue biasanya diwujudkan dalam bentuk single file components, yaitu satu file .vue yang di dalamnya terdapat template, script, serta style yang berhubungan langsung dengan komponen tersebut untuk mendapatkan fungsionalitas dan tampilan khusus dari komponen. Komponen pada Vue biasanya diletakkan pada direktori src/components. Untuk menggunakan komponen, import file .vue dan kemudian daftarkan komponen tersebut di root component.
+
 ## TIPS UJIAN
 
 1. **Hafalkan struktur hierarki** (Grid, Tabs, Router)
