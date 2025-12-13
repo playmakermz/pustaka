@@ -824,6 +824,43 @@ Komponen pada Vue biasanya diwujudkan dalam bentuk single file components, yaitu
 
 ## 5.1
 
+
+Ionic menggunakan berbagai teknik untuk peletakan berbagai komponen melalui layout tertentu. Ada beberapa teknik layout: single page (layar terbagi menjadi tiga bagian: header, content / isi, dan footer), tabs (layar terbagi menjadi tab bar untuk meletakkan komponen dan bagian content / isi), side menu (layar terbagi menjadi side menu yang berada di samping dan default-nya tersembunyi, harus merupakan anak dari suatu halaman), dan split pane (layar terbagi dua yaitu sebelah kiri dan kanan, layar sebelah kiri akan tersembunyi atau muncul tergantung pada ukuran layar).
+
+Untuk layout yang sifatnya custom, bisa digunakan responsive grid yang membuat tampilan menjadi suatu grid yang terbagi menjadi baris dan kolom membentuk tabel.
+
+## 5.2 
+
+Ionic menyediakan fasilitas untuk mengatur tema maupun mengatur berbagai tampilan serta fungsionalitas grafis lainnya. Pengaturan tersebut dilakukan dengan menggunakan CSS serta variabel CSS. Pengaturan tersebut bisa dilakukan untuk keseluruhan aplikasi dengan cara membuat suatu file CSS dan kemudian meng-import file tersebut pada src/main.ts.
+
+Selain itu, pengaturan juga bisa dilakukan untuk setiap komponen di keseluruhan aplikasi maupun per single file component. Pengaturan bisa meliputi perintah CSS secara langsung maupun variabel CSS. Pengaturan utama untuk keseluruhan aplikasi akan dilakukan pada :root sementara untuk pengaturan sesuai device bisa dilakukan pada .ios maupun .md. Pengaturan .md dilakukan untuk device Android maupun dan selain iOS.
+
+## 5.3 
+
+Ionic menyediakan banyak komponen yang bisa digunakan untuk membangun antamuka pemakai. Secara umum, komponen-komponen antarmuka tersebut menggunakan frontend framework sesuai dengan yang digunakan saat membuat rerangka aplikasi baru sehingga ada kemungkinan tetap bisa menggunakan atribut dari Vue misalnya jika pemrogram menggunakan Vue, misal penggunaan v-model untuk Vue.
+
+Ionic juga menyediakan berbagai properties maupun methods untuk berbagai komponen tersebut. Kegiatan Belajar 3 menampilkan komponen-komponen yang banyak digunakan saat membangun aplikasi.
+
+## 6.1 
+
+Untuk memulai proyek aplikasi Ionic, install ionic cli serta ionic lab. Paket ionic cli digunakan untuk mengelola proyek aplikasi Ionic, sementara paket ionic lab digunakan untuk preview hasil pada platform browser maupun mobile phone (Android dan iOS).
+
+Setelah install paket-paket tersebut, pemrogram dapat menggunakan editor/IDE apa saja, tetapi yang mempunyai dukungan paling bagus adalah Visual Studio Code dengan berbagai extensions yang digunakan untuk proyek Ionic/Vue maupun Web. Untuk memulai, Ionic menyediakan berbagai starter project yang dapat diinstall dengan ionic cli.
+
+Ada 4 starter project untuk proyek Ionic/Vue: blank, tabs, sidemenu, dan list. Masing-masing starter project mempunyai kekhususan untuk tipe aplikasi tertentu
+
+## 6.2 
+
+Setiap aplikasi yang dibangun menggunakan Ionic selalu mempunyai layout tertentu. Jika menggunakan responsive grid, maka layar akan dibagi menjadi tabel grid yang terdiri atas baris dan kolom. Ionic menyediakan tag ion-grid, ion-row, dan ion-col untuk keperluan tersebut.
+
+Jika ingin menggunakan menu, gunakan split pane dan kemudian definisikan ion-button-menu serta ion-menu dan ion-toggle-menu. Menu akan ditampilkan menggunakan <ion-list> dan <ion-item>. Untuk kembali ke halaman awal setelah memunculkan suatu halaman baru, gunakan ion-back-button.
+
+## 6.3
+
+Membuat aplikasi, selain melibatkan algoritma proses bisnis, juga melibatkan perancangan layout dari aplikasi serta penempatan komponen-komponen antarmuka pada layout tersebut. Setelah tampilkan antarmuka, perlu dipahami cara menangani jika terdapat event tertentu terkait antarmuka tersebut. Setiap komponen antarmuka pada Ionic, mempunyai event serta event handler sendiri-sendiri dengan cara penanganan yang berbeda-beda antara frontend framework satu dengan lainnya.
+
+Sebagai contoh, ion-checkbox mempunyai event IonChange, tetapi ion-button tidak mempunyai IonChange. Saat menggunakan tipe Vue, pemrogram juga harus memahami bagaimana Vue menangani event, misalnya untuk ion-button pemrogram dapat menggunakan directive v-on atau @click yang merupakan bawaan dari Vue.
+
 ## TIPS UJIAN
 
 1. **Hafalkan struktur hierarki** (Grid, Tabs, Router)
