@@ -781,6 +781,49 @@ Suatu event adalah kejadian yang muncul dan terkait dengan aktivitas di antarmuk
 
 Komponen pada Vue biasanya diwujudkan dalam bentuk single file components, yaitu satu file .vue yang di dalamnya terdapat template, script, serta style yang berhubungan langsung dengan komponen tersebut untuk mendapatkan fungsionalitas dan tampilan khusus dari komponen. Komponen pada Vue biasanya diletakkan pada direktori src/components. Untuk menggunakan komponen, import file .vue dan kemudian daftarkan komponen tersebut di root component.
 
+## 3.1 
+
+TypeScript bisa digunakan juga untuk membangun aplikasi berbasis command line / shell dengan mendayagunakan pustaka standar dari Node.js (dengan menginstall @types/node) serta berbagai pustaka Node.js yang ada di npm (banyak diantaranya sudah mempunyai definisi types - misal @types/yargs). Untuk yang belum tersedia types, maka bisa digunakan perintah-perintah dari JavaScript.
+
+## 3.2 
+
+Suatu aplikasi terdiri atas sisi *client / frontend* dan sisi *server / backend*. Sisi *backend* menyediakan sumber daya yang bisa diakses oleh *frontend* untuk kebutuhan data, sementara sisi *frontend* menyediakan tampilan antarmuka ke pemakai. Istilah yang lebih spesifik untuk *server* yang menyediakan Web API dan bisa diakses untuk kebutuhan data disebut dengan *endpoint*.
+
+Suatu *endpoint* bisa dibangun dengan menggunakan suatu *framework* ataupun pustaka yang menyediakan layanan HTTP. Jika menggunakan HTTP untuk keperluan utama pembuatan *endpoint* serta pengaksesannya dari sisi *frontend*, maka mekanisme tersebut disebut dengan RESTful API. Dari sisi *frontend*, diperlukan pustaka HTTP *client* yang bisa digunakan untuk mengirimkan berbagai *method* dari HTTP (*GET*, *POST*, *PUT*, *DELETE*, dan lain-lain). Di JavaScript / TypeScript, pustaka yang bisa digunakan adalah axios.
+
+## 3.3
+
+Sejak versi 2.5, Vue merupakan *software* yang mendukung TypeScript. Vue versi 3 dibangun dengan menggunakan TypeScript dan TypeScript merupakan bahasa utama. Salah satu unsur yang intensif digunakan di Vue adalah tentang *decorator* yang merupakan deklarasi khusus yang akan mengacu ke suatu fungsi.
+
+*Decorator* banyak digunakan di Vue sehingga perlu pemahaman tentang *decorator*. *Decorator* memungkinkan pemrogram untuk mengatur injeksi ke unit dari kode sumber jika diperlukan ada hal tertentu yang diperlukan oleh unit tersebut di luar inti dari unit tersebut.
+
+*Decorator* diawali dengan tanda @. Dengan menggunakan *vue-cli*, pemrogram bisa membuat instan aplikasi Vue berbasis TypeScript dari awal maupun mengkonversi proyek JavaScript Vue ke TypeScript.
+
+
+## 4.1
+
+Ionic merupakan software framework yang bisa digunakan untuk membangun aplikasi lintas platform untuk Android, iOS, maupun PWA. Untuk membangun aplikasi menggunakan Ionic, pemrogram bisa menggunakan ionic cli yang merupakan tool utama untuk mengelola proyek.
+
+Dengan menggunakan ionic cli, pemrogram bisa membuat proyek Ionic baru maupun mengatur berbagai fitur yang ada di dalam proyek tersebut. Setelah membuat suatu proyek berdasarkan starter tertentu, diperlukan IDE untuk membangun aplikasi Ionic.
+
+Banyak IDE maupun editor teks yang bisa digunakan, tetapi Visual Studio Code menyediakan dukungan yang kuat untuk Ionic maupun ekosistem pembentuknya (Vue, JavaScript, TypeScript). Setelah selesai melakukan konfigurasi dari Visual Studio Code, perlu mengetahui beberapa tools maupun software yang bisa digunakan untuk membangun aplikasi Ionic, seperti Apache Cordova, Capacitor, Stencil, dan lain-lain.
+
+## 4.2 
+
+Paket *ionic cli* merupakan paket yang digunakan untuk mengelola proyek pembuatan aplikasi berbasis Ionic. Dengan menggunakan *ionic cli*, pemrogram bisa membuat kerangka aplikasi berdasarkan *template* tertentu, menjalankan aplikasi, mengelola komponen yang ada di dalam aplikasi, dan berbagai fitur lain untuk mengelola proyek.
+
+Saat membuat kerangka aplikasi, pemrogram harus menentukan apakah akan menggunakan Angular, React, atau Vue. Jika memilih menggunakan Vue, maka pada bagian *src* akan dibuat struktur aplikasi seperti instan aplikasi Vue yang telah dipelajari sebelumnya.
+
+Kerangka aplikasi yang dibuat menggunakan *ionic cli* merupakan kerangka aplikasi yang berbasis TypeScript sehingga sebaiknya pemrogram menggunakan TypeScript untuk membangun aplikasi Ionic. Jika terpaksa menggunakan JavaScript, maka bisa mengatur 2 hal di *tsconfig.json*, yaitu *allowJs* menjadi *true* dan *strict* menjadi *false*.
+
+## 4.3
+
+Suatu event adalah kejadian yang muncul dan terkait dengan aktivitas di antarmuka pemakai. Tidak semua event harus ditangani, hanya yang dikehendaki oleh pemrogram saja. Vue mempunyai fasilitas untuk menangani event tersebut dalam bentuk event handler yang bisa diwujudkan dalam bentuk ekspresi JavaScript maupun fungsi; baik fungsi yang dengan atau tanpa argumen maupun fungsi yang hanya berjumlah satu maupun lebih dari satu. Selain itu, Vue juga memungkinkan mengakses DOM secara langsung. Jika dikehendaki, Vue menyediakan modifier bagi direktif untuk penanganan elemen lebih lanjut.
+
+Komponen pada Vue biasanya diwujudkan dalam bentuk single file components, yaitu satu file .vue yang di dalamnya terdapat template, script, serta style yang berhubungan langsung dengan komponen tersebut untuk mendapatkan fungsionalitas dan tampilan khusus dari komponen. Komponen pada Vue biasanya diletakkan pada direktori src/components. Untuk menggunakan komponen, import file .vue dan kemudian daftarkan komponen tersebut di root component.
+
+## 5.1
+
 ## TIPS UJIAN
 
 1. **Hafalkan struktur hierarki** (Grid, Tabs, Router)
