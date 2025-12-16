@@ -79,3 +79,85 @@ IT Service Management (ITSM) adalah keseluruhan disiplin atau proses untuk menge
 Beberapa manfaat ITIL antara lain:meningkatkan kepuasan pengguna dan pelanggan dengan layanan TI yang diberikan, peningkatan ketersediaan layanan, yang secara langsung berpotensi meningkatkan keuntungan dan pendapatan bisnis, penghematan finansial dari pengurangan pengerjaan ulang, waktu yang hilang, pengelolaan dan penggunaan sumber daya yang lebih baik, peningkatan waktu ke pasar untuk aspek TI dari produk dan layanan baru, pengambilan keputusan yang lebih baik dan risiko yang dioptimalkan untuk semua proses terkait TI.
 
 ## 3.1
+
+Tata kelola IT akan berhubungan dengan komputasi awan karena sebagian perusahaan sudah menggunakan komputasi awan dengan beberapa manfaat seperti: mengurangi biaya infrastruktur karena sentralisasi, peningkatan kapasitas beban puncak, kinerja sistem yang konsisten dipantau oleh penyedia layanan.
+
+Manajer perusahaan yang menerapkan tata kelola TI perlu mengambil pendekatan berbeda dalam meninjau kontrol internal untuk aplikasi SOA (Service Oriented Architecture) serta memahami keamanan TI di lingkungan komputasi awan.
+
+Beberapa masalah utama tata kelola TI dan jaminan komputasi awan adalah: transparansi, privasi, kepatuhan, arus informasi lintas batas dan sertifikasi.
+
+Tim manajemen yang bertanggung jawab atas tata kelola TI perusahaan harus mendapatkan jaminan di beberapa dari tujuh area berikut yaitu: akses pengguna yang memiliki hak istimewa, kepatuhan terhadap peraturan, lokasi data, pemisahan data, pemulihan, dukungan investigasi dan viabilitas jangka panjang.
+
+Terkait dengan tata kelola TI, virtualisasi memiliki keunikan yang memerlukan kebijakan dan kontrol baru, antara lain: manajemen identitas, kontrol mobilitas ketentuan proses penyediaan server tradisional dapat dengan mudah dibuang di ruang virtual, pemisahan data.
+
+## 3.2
+
+Organisasi profesional keamanan TI terkemuka lainnya, Konsorsium Sertifikasi Keamanan Sistem Informasi Internasional atau Information System Consorcium (ISC) 2, telah mengembangkan GASSP (Generally Accepted System Security Principles), dengan versi 2.0 yang dirilis pada tahun 1999. Sesuai dengan namanya, prinsip-prinsip ini diterima secara umum; artinya, mereka mewakili konsep yang umumnya digunakan pada saat ini untuk mengamankan sumber daya TI.
+
+Prinsip GASSP adalah sebagai berikut: keamanan TI harus mendukung misi perusahaan, manfaat keamanan memiliki biaya langsung dan tidak langsung, pemilik sistem memiliki tanggung jawab keamanan di luar organisasi mereka sendiri, perbedaan antara tanggung jawab dan akuntabilitas untuk keamanan TI tidak selalu jelas.
+
+Di bawah kepemimpinan fungsi perusahaan yang diberi tanggung jawab atas BCP perusahaan, sebuah tim harus dibentuk untuk mengembangkan kebijakan keberlangsungan bisnis bagi perusahaan, termasuk: meninjau perencanaan kesinambungan perusahaan yang ada, seperti rencana pemulihan bencana TI yang ada atau rencana darurat karena faktor cuaca untuk menentukan kesesuaian prosedur BCP perusahaan.
+
+Kompleksitas saling ketergantungan pada layanan, proses bisnis, data, dan teknologi perlu dianalisis, dengan strategi yang tepat yang dipilih untuk memenuhi kebutuhan: sumber daya manusia yang ada di perusahaan, kebutuhan tempat kerja, teknologi pendukung, informasi fisik dan virtual, peralatan dan perlengkapan.
+
+## 4.1
+
+Enterprise Content Management Processes atau ECM menjelaskan strategi, metode, dan alat yang digunakan untuk mendapatkan, mengelola, menyimpan, menjaga, dan menyampaikan konten dan dokumen yang terkait dengan proses organisasi.
+
+Tujuan dokumen arsitektur referensi ECM adalah untuk memperkenalkan istilah kunci dan perbedaan yang relevan dengan topik, untuk memberikan masukan untuk membuat atau mengevaluasi arsitektur untuk ECM, untuk mengidentifikasikan blok bangunan (lapisan arsitektural, layanan, komponen) untuk diintegrasikanelemen solusi ECM, untuk mengkomunikasikan keputusan arsitektur kunci yang relevan untuk membuat atau mengevaluasi solusi ECM dan untuk mengkomunikasikan peluang untuk solusi dan/atau berbagi platform.
+
+Dokumentasi arsitektur referensi ECM memiliki bagian (a) ikhtisar manajemen konten perusahaan, (b) ECM reference architecture description, (c) glosarium dan (d) referensi.
+
+Penggerak paling umum atau manfaat untuk adopsi ECM adalah efisiensi, ketersediaan, ketertelusuran dan konsistensi.
+
+Menurut AIIM (Association for Information and Image Management), ada lima area utama dalam ECM yaitu capture and deliver, kelola, store, preserve dan deliver.
+
+Komponen pengembangan dan administrasi ECM meliputi alur kerja/disain proses bisnis, manajemen taksonomi, formulir dan/atau disain template dan alat penulisan konten.
+
+## 4.2
+
+Audit internal adalah fungsi penilaian independen yang dibentuk dalam suatu organisasi untuk memeriksa dan mengevaluasi aktivitasnya sebagai layanan bagi organisasi yang lebih bermakna fokus pada istilah-istilah pentingnya. Auditor internal saat ini secara resmi dan aktif melayani dewan direksi komite audit, dan kepala eksekutif audit (CAE) saat ini memiliki level langsung dan komunikasi aktif dengan komite audit yang sama.
+
+Sebuah organisasi profesional baru, yang kemudian disebut Asosiasi Auditor EDP, adalah dibentuk untuk mendukung para profesional audit internal baru ini. EDP adalah singkatan dari electronic data processing, istilah kuno untuk sistem dan proses TI. Para profesional ini sekarang sekarang dikenal sebagai auditor TI dan organisasi profesional utama mereka sekarang dikenal sebagai Asosiasi Audit dan Pengendalian Sistem Informasi, sebuah organisasi profesional tata kelola TI yang penting yang pertama kali diperkenalkan.
+
+Kegiatan dan tanggung jawab tata kelola IT audit internal meliputi independensi dan objektivitas, ruang lingkup dan tanggung jawab, otoritas audit internal, akuntabilitas dan standar.
+
+Process internal audit meliputi penjadwalan audit, penugasan auditor dan melakukan penilaian audit awal.
+
+Auditor internal saat ini harus memiliki pengetahuan tentang pengendalian internal terkait TI, ada juga spesialisasi profesional yang kuat yang dikenal sebagai auditor TI. Para profesional merupakan sumber daya utama untuk mengembangkan dan menerapkan proses tata kelola TI yang kuat dan efektif.
+
+Profesi audit internal melalui pengembangan dirinya sendiri dan dedikasi, telah berkontribusi pada kemajuan ini dan telah menyiapkan diri untuk keberlanjutan. Ini adalah komponen penting dari proses tata kelola TI yang efektif.
+
+Dari perspektif tata kelola TI, dokumen piagam akan memberikan wewenang kepada tim audit internal untuk memasuki dan meninjau kembali operasi pusat data dan laporan dan bahan yang diamankan yang merupakan bagian dari audit yang direncanakan.
+
+Organisasi profesional auditor internal, IIA, bertanggung jawab untuk menerbitkan standar praktik dan perilaku untuk semua auditor internal, pada dasarnya digunakan diseluruh dunia. Panduan otoritatif ini merupakan kombinasi dari pernyataan standar wajib yang diperlukan dan diperlukan untuk melanjutkan praktik audit profesional, ditambah serangkaian praktik standar yang sangat direkomendasikan. Standar IIA ini mencakup tata kelola TI dan kegiatan tata kelola audit internal secara luas.
+
+## 5.1
+
+Proses tata kelola TI seharusnya diintegrasikan ke dalam operasi inti bisnis perusahaan juga dimana pengelolaan setiap anak perusahaan atau unit bisnis menjadi tanggung jawab untuk memastikan proses tata kelola TI yang tepat.
+
+Kode etik harus berupa seperangkat aturan atau pedoman yang jelas dan tidak ambigu yang diuraikan apa yang diharapkan dari anggota perusahaan, apakah pejabat, karyawan, kontraktor, vendor, atau pemangku kepentingan lainnya.
+
+Contoh Kode Topik Etik sebagai berikut: pendahuluan, kejujuran, perilaku di tempat kerja, konflik kepentingan, properti dan catatan perusahaan dan kepatuhan terhadap hukum.
+
+Kode etik baru dapat dikomunikasikan melalui metode seperti yang dipimpin oleh CEO melalui Webinar, sesi pelatihan, atau cara lain untuk mengomunikasikan pentingnya dan artinya.
+
+Perusahaan harus meninjau kode etik yang diterbitkan secara berkala dan setidaknya setiap dua tahun memastikan bahwa pedoman tersebut masih berlaku dan terkini.
+
+Lima tindakan berikut harus dipertimbangkan sebagai bagian dari peluncuran strategi etika dan whistleblower yang efektif untuk seluruh perusahaan: kebijakan perusahaan, program kepedulian karyawan, pelatihan supervisor, bimbingan untuk kontraktor dan survei karyawan.
+
+Whistleblowing merupakan elemen atau konsep penting dari tata kelola perusahaan. Whistleblower adalah orang yang memberi tahu publik atau pihak berwenang tentang dugaan tidak jujur atau aktivitas ilegal yang terjadi di departemen pemerintah atau perusahaan swasta atau publik.
+
+
+## 5.2
+
+Sistem media sosial adalah alat yang hebat untuk komunikasi dan tentunya melampaui dan karena banyak yang lebih populer daripada email internet yang begitu umum dalam bisnis saat ini. Aplikasi komputasi jaringan sosial seringkali dapat meningkatkan tata kelola TI dan masalah saat digunakan dalam lingkungan bisnis perusahaan.
+
+Situs media sosial sering kali tampak bersahabat dan berada di luar layar kendali banyak sistem bisnis, proses, dan masalah. Mereka terlalu sering dipandang sebagai pengalihan karyawan, seperti upaya bersama dari komite perencanaan untuk pesta liburan tahunan. Namun, masalah media sosial lebih bisa dilihat dari sekadar pesan sosial yang bersahabat, karena orang lain dapat melihat lalu lintas pesan ini dan berpotensi memulai berbagai macam tindakan berdasarkan komunikasi dari pesan tersebut.
+
+Terkadang sistem media sosial dipandang sebagai sumber daya yang hampir terkait dengan SDM, seperti buletin perusahaan tidak resmi. Namun, perusahaan menghadapi banyak risiko dalam sistem media sosial, termasuk hilangnya reputasi dan kemungkinan tanggung jawab saat karyawan mengoceh atau memposting foto dan video tentang apa yang tidak boleh mereka lakukan. Ada juga risiko keamanan komputer malware, pencurian identitas, apa yang disebut phishing, dan pelanggaran privasi data sensitif.
+
+Beberapa risiko dan kekhawatiran media sosial berikut: masalah produktivitas karyawan, kurangnya kendali atas konten perusahaan, ketidakpatuhan terhadap peraturan manajemen catatan, virus dan spyware, masalah bandwidth dan masalah keamanan perusahaan.
+
+Terkait dengan kebijakan media sosial, perusahaan perlu menetapkan praktik pendidikan, menguraikan apa yang boleh dan tidak boleh dilakukan di berbagai sistem media sosial serta beberapa kebijakan yang sangat spesifik yang meliputi penggunaan alat ini oleh pemangku kepentingan. Fungsi audit internal diatur melalui piagam yang disetujui oleh komite audit yang menjelaskan aktivitas dan hubungannya dengan komite audit perusahaan. Piagam ini biasanya mengharuskan komite audit untuk: Tinjau sumber daya, rencana, kegiatan, kepegawaian, dan struktur organisasi audit internal perusahaan. Mengenai aktivitas tata kelola TI. Meninjau penunjukan, kinerja, dan penggantian eksekutif kepala audit (CAE), petugas yang bertanggung jawab atas audit internal. Meninjau semua audit dan laporan yang disiapkan oleh audit internal bersama dengan tanggapan manajemen. Meninjau dengan manajemen, CAE, dan akuntan independen tentang kecukupan pelaporan keuangan dan sistem pengendalian internal.
+
