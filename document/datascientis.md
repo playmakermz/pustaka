@@ -1,535 +1,893 @@
-Panduan Komprehensif Data Science: Dari Manipulasi Data hingga Pembelajaran Mesin Tanpa Pengawasan
-1. Pendahuluan: Paradigma Berbasis Data dalam Komputasi Modern
-Dalam lanskap teknologi kontemporer, data telah bertransformasi dari sekadar produk sampingan operasional menjadi aset strategis utama yang menggerakkan pengambilan keputusan di hampir setiap sektor industri. Disiplin ilmu Data Science muncul sebagai jembatan kritikal yang menghubungkan data mentah dengan wawasan yang dapat ditindaklanjuti, menggabungkan prinsip-prinsip statistik, kemampuan komputasi, dan pemahaman domain yang mendalam. Dokumen ini disusun sebagai materi referensi ekstensif untuk mata kuliah pengantar data science, dirancang untuk memberikan pemahaman holistik mengenai siklus hidup analisis data—mulai dari "pekerjaan kasar" pembersihan data hingga keanggunan pemodelan prediktif dan eksplorasi struktur tersembunyi melalui klastering.
+# CATATAN DATA SCIENCE - PERSIAPAN UJIAN
 
-Sebuah realitas mendasar yang sering dihadapi oleh para praktisi adalah bahwa alur kerja data science tidaklah glamor seperti yang sering digambarkan di media. Steve Lohr dari The New York Times mencatat sebuah konsensus industri bahwa para ilmuwan data menghabiskan antara 50% hingga 80% waktu mereka terperosok dalam tugas-tugas duniawi pengumpulan dan persiapan data digital yang tidak teratur. Fenomena ini bukan sekadar inefisiensi, melainkan sebuah kebutuhan fundamental; kualitas output dari model pembelajaran mesin secanggih apa pun sangat bergantung pada kualitas inputnya. Prinsip garbage in, garbage out (sampah masuk, sampah keluar) berlaku secara absolut di sini. Oleh karena itu, laporan ini memberikan porsi pembahasan yang signifikan pada teknik pra-pemrosesan, pembersihan noise, dan eksplorasi data awal sebelum melangkah ke teknik inferensi yang lebih kompleks.   
+## BAB 1: PENGENALAN DATA SCIENCE
 
-Melalui pendekatan yang mengutamakan implementasi kode (code-first) menggunakan ekosistem Python—termasuk Pandas, NumPy, Matplotlib, Seaborn, dan Scikit-Learn—dokumen ini bertujuan untuk mendemistifikasi konsep-konsep abstrak tanpa membebani pembaca dengan derivasi matematika yang rumit. Kita akan menelusuri bagaimana data mentah dibersihkan dari anomali, bagaimana distribusi statistik mengungkapkan karakteristik populasi, bagaimana uji hipotesis memvalidasi asumsi bisnis, dan akhirnya, bagaimana algoritma seperti Regresi Linear dan K-Means Clustering mengungkap pola masa depan dan struktur tersembunyi.
+### Apa Itu Data Science?
+Data Science adalah disiplin ilmu yang menggabungkan **statistika**, **programming**, dan **domain knowledge** untuk mengubah data mentah menjadi wawasan yang berguna dan dapat ditindaklanjuti.
 
-2. Eksplorasi Data dan Pra-pemrosesan: Fondasi Analisis
-Langkah pertama dalam setiap proyek data science adalah Exploratory Data Analysis (EDA) dan Data Cleaning. Data mentah yang dikumpulkan dari berbagai sumber—baik itu sensor IoT, log transaksi, atau survei pelanggan—seringkali tidak lengkap, tidak konsisten, dan penuh dengan noise. Mengabaikan tahap ini dapat menyebabkan bias yang signifikan dalam analisis dan kegagalan total dalam pemodelan prediktif.
+### Mengapa Data Science Penting?
+- Data telah menjadi aset yang sangat berharga di era digital
+- Perusahaan membutuhkan keputusan berbasis data (data-driven decision)
+- Membantu memprediksi masa depan dan menemukan pola tersembunyi
 
-2.1. Memahami Struktur Data dengan Pandas
-Sebelum manipulasi apa pun dilakukan, seorang analis harus memahami dimensi, tipe data, dan struktur dasar dari dataset. Pustaka Pandas di Python menyediakan struktur data DataFrame yang efisien untuk tujuan ini. Fungsi-fungsi dasar seperti read_csv() memungkinkan pemuatan data, sementara head(), info(), dan describe() memberikan tinjauan cepat mengenai konten data.   
+### Kenyataan Praktis di Lapangan
+**Fakta Penting:** Para praktisi data science menghabiskan **50-80% waktu mereka** untuk membersihkan dan mempersiapkan data, bukan untuk modeling!
 
-Dalam konteks EDA, pemahaman terhadap tipe data sangat krusial. Variabel dapat berupa numerik (kontinu atau diskrit) atau kategorikal (nominal atau ordinal). Kesalahan dalam mengidentifikasi tipe data—misalnya, memperlakukan kode pos sebagai variabel numerik—dapat menyebabkan perhitungan statistik yang tidak valid, seperti menghitung rata-rata kode pos yang tidak memiliki makna semantik. Konversi tipe data seringkali diperlukan, misalnya mengubah string tanggal menjadi objek datetime agar dapat dilakukan analisis deret waktu, atau mengubah variabel kategorikal menjadi representasi numerik melalui teknik encoding agar dapat diproses oleh algoritma pembelajaran mesin.   
+**Istilah Penting:** 
+- **Garbage In, Garbage Out (GIGO)**: Jika input data buruk, output juga akan buruk. Tidak ada algoritma terbaik sekalipun bisa menyelamatkan data berkualitas rendah.
 
-2.2. Manajemen Data yang Hilang (Missing Values)
-Data yang hilang adalah masalah umum yang dapat timbul karena kegagalan sistem pencatatan, penolakan responden untuk menjawab pertanyaan tertentu, atau korupsi data selama transmisi. Penanganan data yang hilang memerlukan strategi yang hati-hati, karena keputusan untuk menghapus atau mengisi data tersebut akan mengubah karakteristik statistik dari dataset.
+---
 
-Terdapat beberapa pendekatan utama dalam menangani nilai yang hilang, yang masing-masing memiliki implikasi tersendiri:
+## BAB 2: DATA CLEANING & PERSIAPAN DATA
 
-Metode Penanganan	Deskripsi & Mekanisme	Kelebihan	Kekurangan
-Penghapusan (Dropping)	Menghapus baris atau kolom yang mengandung nilai kosong secara keseluruhan.	Sederhana dan cepat; tidak memperkenalkan bias imputasi buatan.	Dapat mengurangi ukuran sampel secara drastis; berisiko kehilangan informasi berharga jika data yang hilang tidak acak.
-Imputasi Mean/Median	Mengisi nilai kosong dengan rata-rata atau nilai tengah dari kolom tersebut.	Mempertahankan ukuran sampel; mudah diimplementasikan.	
-Mengurangi varians data; dapat mendistorsi korelasi antar variabel.
+Ini adalah fase paling kritis dan memakan waktu dalam data science.
 
-Imputasi Modus	Mengisi nilai kosong dengan nilai yang paling sering muncul (khusus data kategorikal).	Strategi standar untuk data non-numerik.	Dapat menciptakan bias "mayoritas" jika kategori modus sangat mendominasi.
-Interpolasi	Mengestimasi nilai berdasarkan nilai tetangga (biasanya pada data deret waktu).	Mempertahankan tren data seiring waktu.	Tidak cocok untuk data cross-sectional yang tidak berurutan.
-  
-Dalam praktik Python, metode isnull() atau isna() digunakan untuk mendeteksi keberadaan nilai yang hilang, yang sering direpresentasikan sebagai NaN (Not a Number) atau None. Fungsi dropna() digunakan untuk menghapus baris/kolom, sementara fillna() adalah "pisau serbaguna" untuk melakukan imputasi.   
+### 2.1 Membaca & Memahami Data dengan Pandas
 
-Berikut adalah implementasi komprehensif penanganan missing values:
+**Pandas** adalah library Python untuk manipulasi data yang paling powerful.
 
-Python
+```python
 import pandas as pd
 import numpy as np
 
-# Simulasi dataset dengan berbagai jenis data yang hilang
-raw_data = {
-    'ID_Transaksi': ,
-    'Nilai_Belanja': [500.0, 750.0, np.nan, 300.0, np.nan, 1200.0, 450.0],
-    'Kategori_Produk': ['Elektronik', 'Fashion', 'Elektronik', np.nan, 'Fashion', 'Elektronik', 'Fashion'],
-    'Rating_Layanan': [5, 4, np.nan, 3, 5, np.nan, 4]
+# Membaca file CSV
+df = pd.read_csv('data.csv')
+
+# Melihat 5 baris pertama
+print(df.head())
+
+# Info umum tentang data
+print(df.info())  # Tipe data, jumlah baris, memory usage
+
+# Statistik dasar
+print(df.describe())  # Mean, std, min, max, quartile
+```
+
+**Istilah Penting:**
+- **DataFrame**: Tabel dua dimensi (baris & kolom) yang mirip spreadsheet
+- **Index**: Nomor baris (default: 0, 1, 2, ...)
+- **Kolom**: Nama variabel/feature
+
+### 2.2 Menangani Data Hilang (Missing Values)
+
+Data hilang terjadi ketika ada kolom yang kosong (NaN = Not a Number)
+
+**4 Strategi Penanganan:**
+
+#### Strategi 1: Penghapusan (Dropping)
+```python
+# Hapus baris yang ada missing value
+df_clean = df.dropna()
+
+# Hapus kolom yang lebih dari 50% kosong
+df_clean = df.dropna(thresh=0.5)
+```
+✅ **Kelebihan:** Sederhana, tidak ada bias imputasi
+❌ **Kekurangan:** Bisa kehilangan banyak data
+
+---
+
+#### Strategi 2: Imputasi dengan Mean/Median
+```python
+# Isi missing value dengan rata-rata
+df['kolom'] = df['kolom'].fillna(df['kolom'].mean())
+
+# Lebih baik: Isi dengan median (tahan outlier)
+df['kolom'] = df['kolom'].fillna(df['kolom'].median())
+```
+✅ **Kelebihan:** Menjaga ukuran sampel
+❌ **Kekurangan:** Mengurangi variasi data
+
+**Istilah:**
+- **Mean**: Rata-rata (= sum semua / jumlah data)
+- **Median**: Nilai tengah setelah data diurutkan (tahan terhadap nilai ekstrem/outlier)
+
+---
+
+#### Strategi 3: Imputasi dengan Modus
+```python
+# Untuk data kategorikal - isi dengan nilai paling sering
+mode_val = df['kolom'].mode()[0]  # Nilai yang paling sering muncul
+df['kolom'] = df['kolom'].fillna(mode_val)
+```
+
+---
+
+#### Strategi 4: Imputasi Maju/Mundur (Time Series)
+```python
+# Jika data adalah deret waktu, bisa isi dengan nilai sebelumnya
+df['kolom'] = df['kolom'].fillna(method='ffill')  # Forward fill
+```
+
+**Contoh Lengkap Menangani Missing Values:**
+
+```python
+import pandas as pd
+import numpy as np
+
+# Buat data simulasi dengan missing values
+data = {
+    'ID': [1, 2, 3, 4, 5, 6],
+    'Gaji': [5000000, np.nan, 6000000, 4500000, np.nan, 7000000],
+    'Departemen': ['IT', 'HR', np.nan, 'IT', 'HR', 'Finance'],
+    'Tahun_Pengalaman': [2, 3, 1, np.nan, 4, 5]
 }
 
-df = pd.DataFrame(raw_data)
-
-print("--- Tinjauan Data Awal ---")
+df = pd.DataFrame(data)
+print("Data Awal:")
 print(df)
-print("\n--- Analisis Missing Values ---")
+print("\nJumlah Missing Values per Kolom:")
 print(df.isnull().sum())
 
-# Strategi 1: Penghapusan (Dropping)
-# Menghapus baris yang memiliki setidaknya satu missing value
-# Strategi ini agresif dan hanya disarankan jika jumlah missing values sangat sedikit (<5%)
-df_dropped = df.dropna()
-print(f"\nJumlah baris setelah dropping: {len(df_dropped)}")
-
-# Strategi 2: Imputasi (Pengisian)
-# Kita akan membuat salinan data agar tidak merusak data asli
-df_imputed = df.copy()
-
-# A. Imputasi Numerik: Menggunakan Median untuk 'Nilai_Belanja'
-# Median lebih robust terhadap outlier dibandingkan Mean.
-median_val = df_imputed.median()
-df_imputed = df_imputed.fillna(median_val)
-
-# B. Imputasi Kategorikal: Menggunakan Modus untuk 'Kategori_Produk'
-# Modus adalah nilai yang paling sering muncul.
-mode_val = df_imputed['Kategori_Produk'].mode()
-df_imputed['Kategori_Produk'] = df_imputed['Kategori_Produk'].fillna(mode_val)
-
-# C. Imputasi Konstan: Mengisi 'Rating_Layanan' dengan 0 (asumsi tidak ada rating = 0)
-df_imputed = df_imputed.fillna(0)
-
-print("\n--- Data Setelah Imputasi ---")
-print(df_imputed)
-Analisis mendalam terhadap kode di atas menunjukkan bahwa pemilihan strategi imputasi harus didasarkan pada konteks kolom. Untuk Nilai_Belanja, penggunaan median dipilih karena pengeluaran uang seringkali memiliki distribusi skewed (miring), di mana beberapa transaksi besar dapat menarik nilai rata-rata (mean) menjadi tidak representatif. Sebaliknya, median memberikan estimasi pusat data yang lebih tahan banting. Untuk Kategori_Produk, rata-rata tidak dapat dihitung secara matematis, sehingga modus adalah pilihan logis.   
-
-2.3. Penanganan Data Duplikat
-Duplikasi data adalah anomali lain yang sering terjadi, terutama ketika dataset merupakan hasil penggabungan (merging) dari beberapa sumber data yang tumpang tindih, atau akibat kesalahan sistem pencatatan yang mengirimkan entri ganda. Data duplikat berbahaya karena dapat menyebabkan model pembelajaran mesin menjadi bias—model akan "menghafal" pola data yang muncul berulang kali tersebut dan memberikan bobot yang tidak proporsional padanya.   
-
-Pandas menyediakan metode duplicated() untuk mendeteksi baris yang identik dan drop_duplicates() untuk membersihkannya. Penting untuk membedakan antara duplikat penuh (seluruh kolom sama) dan duplikat parsial (hanya kolom kunci tertentu, seperti ID Transaksi, yang sama). Dalam banyak kasus, duplikat parsial pada kunci unik (Primary Key) mengindikasikan inkonsistensi data yang lebih dalam yang perlu diselesaikan.
-
-2.4. Pembersihan Noisy Data dan Teknik Binning
-Noisy data merujuk pada data yang mengandung varians acak yang tidak bermakna, kesalahan pengukuran kecil, atau fluktuasi yang mengaburkan tren utama. Salah satu teknik klasik dan efektif untuk menangani noise dan menghaluskan data (smoothing) adalah Binning. Binning mengelompokkan nilai-nilai numerik kontinu ke dalam interval diskrit atau "wadah" (bins). Teknik ini tidak hanya mereduksi noise tetapi juga sering digunakan untuk mengubah variabel numerik menjadi variabel kategorikal ordinal, yang dapat meningkatkan kinerja model tertentu (misalnya pohon keputusan) dan mempermudah visualisasi.   
-
-Terdapat dua pendekatan utama dalam pembentukan bin:
-
-Equal-Width Binning (Binning Berdasarkan Jarak): Rentang data dibagi menjadi N interval dengan lebar yang sama. Metode ini sensitif terhadap outlier; satu nilai ekstrem dapat memperluas rentang secara drastis, menyebabkan sebagian besar data terkumpul hanya dalam satu bin.
-
-Equal-Frequency Binning (Binning Berdasarkan Kuantil): Data dibagi sedemikian rupa sehingga setiap bin mengandung jumlah observasi yang kurang lebih sama. Metode ini lebih baik dalam menangani distribusi data yang miring (skewed).   
-
-Setelah bin terbentuk, teknik smoothing dapat diterapkan dengan mengganti nilai asli dalam bin tersebut dengan nilai representatif bin, seperti:
-
-Smoothing by Bin Means: Mengganti setiap nilai dengan rata-rata bin.
-
-Smoothing by Bin Medians: Mengganti setiap nilai dengan median bin.
-
-Smoothing by Bin Boundaries: Mengganti setiap nilai dengan batas bin terdekat (minimum atau maksimum bin).   
-
-Berikut adalah implementasi teknik binning dan smoothing untuk mereduksi noise pada data harga yang fluktuatif:
-
-Python
-import pandas as pd
-import numpy as np
-
-# Simulasi data harga yang 'noisy' (misalnya harga saham harian)
-np.random.seed(42)
-harga = np.sort(np.random.randint(10, 100, 20)) # Data diurutkan untuk demonstrasi binning
-df_noise = pd.DataFrame({'Harga_Asli': harga})
-
-# 1. Equal-Width Binning (Membagi rentang nilai menjadi 4 interval sama lebar)
-# Fungsi pd.cut digunakan untuk binning berdasarkan nilai
-df_noise = pd.cut(df_noise['Harga_Asli'], bins=4, labels=)
-
-# 2. Equal-Frequency Binning (Membagi data menjadi 4 grup dengan jumlah item sama)
-# Fungsi pd.qcut digunakan untuk binning berdasarkan kuantil
-df_noise = pd.qcut(df_noise['Harga_Asli'], q=4, labels=['Q1', 'Q2', 'Q3', 'Q4'])
-
-# 3. Teknik Smoothing by Bin Means
-# Langkah A: Tentukan Bin ID (menggunakan equal-frequency agar seimbang)
-df_noise = pd.qcut(df_noise['Harga_Asli'], q=4, labels=False)
-
-# Langkah B: Hitung rata-rata untuk setiap Bin ID
-bin_means = df_noise.groupby('Bin_ID')['Harga_Asli'].transform('mean')
-
-# Langkah C: Ganti nilai asli dengan rata-rata bin
-df_noise = bin_means
-
-print("--- Demonstrasi Reduksi Noise dengan Binning ---")
-print(df_noise].head(10))
-Dalam contoh di atas, kolom Harga_Smoothed menunjukkan efek penghalusan. Nilai-nilai individual yang mungkin berfluktuasi sedikit kini digantikan oleh nilai rata-rata kelompoknya. Hal ini menghilangkan variasi lokal kecil yang dianggap sebagai noise, memungkinkan analis untuk fokus pada tren makro antar kelompok harga. Namun, perlu dicatat bahwa over-smoothing dapat menghilangkan informasi detail yang mungkin penting.   
-
-3. Statistik Deskriptif dan Eksplorasi Univariat
-Setelah data dibersihkan, langkah logis berikutnya adalah memahami karakteristik distribusinya melalui statistik deskriptif. Ini adalah bentuk analisis univariat (satu variabel) yang bertujuan untuk meringkas data dalam bentuk angka tunggal yang representatif. Statistik deskriptif secara umum dibagi menjadi ukuran tendensi sentral, ukuran dispersi, dan ukuran bentuk distribusi.
-
-3.1. Ukuran Tendensi Sentral dan Dispersi
-Ukuran tendensi sentral memberikan gambaran tentang "pusat" data, sementara ukuran dispersi menggambarkan seberapa jauh data menyebar dari pusat tersebut.
-
-Mean (Rata-rata): Jumlah semua nilai dibagi jumlah observasi. Sangat sensitif terhadap outlier.
-
-Median (Nilai Tengah): Nilai yang membagi data terurut menjadi dua bagian sama besar. Lebih robust terhadap data ekstrem.
-
-Modus: Nilai yang paling sering muncul. Satu-satunya ukuran pusat yang valid untuk data nominal.
-
-Standar Deviasi & Varians: Mengukur rata-rata jarak setiap titik data dari mean. Varians yang tinggi menunjukkan data yang sangat tersebar.
-
-3.2. Bentuk Distribusi: Skewness dan Kurtosis
-Dua metrik statistik lanjutan yang sering diabaikan dalam analisis dasar namun vital untuk memahami risiko dan asumsi model adalah Skewness dan Kurtosis.   
-
-Skewness (Kemencengan)
-Skewness mengukur asimetri distribusi probabilitas variabel acak riil di sekitar rata-ratanya.
-
-Skewness ≈ 0: Distribusi simetris (seperti Distribusi Normal). Mean ≈ Median.
-
-Skewness Positif (> 0): Disebut Right-skewed. Ekor distribusi memanjang ke kanan. Sebagian besar data terkonsentrasi di nilai rendah, tetapi ada beberapa nilai ekstrem tinggi yang menarik rata-rata ke kanan. Contoh: Distribusi kekayaan (banyak orang miskin/menengah, sedikit miliarder).
-
-Skewness Negatif (< 0): Disebut Left-skewed. Ekor memanjang ke kiri. Sebagian besar data di nilai tinggi.
-
-Kurtosis (Keruncingan)
-Kurtosis mengukur "ketebalan ekor" (tailedness) dari distribusi, yang mengindikasikan seberapa sering outlier terjadi dibandingkan dengan distribusi normal.
-
-Mesokurtic (Excess Kurtosis ≈ 0): Karakteristik distribusi normal standar.
-
-Leptokurtic (Excess Kurtosis > 0): Distribusi dengan puncak yang tajam dan ekor yang tebal (fat tails). Ini menunjukkan probabilitas tinggi terjadinya nilai ekstrem atau outlier. Dalam keuangan, aset leptokurtic dianggap berisiko tinggi.
-
-Platykurtic (Excess Kurtosis < 0): Distribusi dengan puncak datar dan ekor tipis. Data tersebar lebih merata dan jarang memiliki outlier ekstrem.   
-
-Implementasi kode berikut menunjukkan perhitungan metrik ini menggunakan Pandas dan Scipy:
-
-Python
-import scipy.stats as stats
-import pandas as pd
-import numpy as np
-
-# Simulasi Data: Distribusi Gamma (cenderung Positif Skewed)
-np.random.seed(101)
-data_sampel = np.random.gamma(shape=2, scale=2, size=1000)
-series_data = pd.Series(data_sampel)
-
-# Menghitung Statistik Deskriptif Dasar
-deskripsi = series_data.describe()
-
-# Menghitung Skewness dan Kurtosis
-# Pandas menggunakan formula yang tidak bias secara default
-skewness_val = series_data.skew()
-kurtosis_val = series_data.kurtosis()
-
-print("--- Statistik Deskriptif ---")
-print(deskripsi)
-print(f"\nSkewness: {skewness_val:.4f}")
-print("Interpretasi Skewness:", "Ekor Kanan (Positif)" if skewness_val > 0 else "Ekor Kiri (Negatif)")
-
-print(f"Kurtosis: {kurtosis_val:.4f}")
-# Interpretasi berdasarkan Excess Kurtosis (Normal = 0)
-if kurtosis_val > 0:
-    interp_kurt = "Leptokurtic (Ekor Tebal, Banyak Outlier)"
-elif kurtosis_val < 0:
-    interp_kurt = "Platykurtic (Ekor Tipis, Sedikit Outlier)"
-else:
-    interp_kurt = "Mesokurtic (Normal)"
-print("Interpretasi Kurtosis:", interp_kurt)
-Pemahaman mengenai skewness dan kurtosis sangat penting dalam pemilihan model. Banyak algoritma parametrik (seperti Regresi Linear) berasumsi bahwa residual data berdistribusi normal (skewness ≈ 0). Jika data sangat miring, transformasi data (seperti transformasi Logaritma atau Box-Cox) seringkali diperlukan untuk "menormalkan" data sebelum pemodelan dilakukan.   
-
-4. Distribusi Probabilitas
-Distribusi probabilitas adalah fungsi matematika yang memberikan probabilitas terjadinya berbagai kemungkinan hasil dalam sebuah eksperimen. Memahami distribusi yang mendasari data adalah prasyarat untuk memilih uji statistik yang tepat. Tiga distribusi fundamental yang wajib dipahami dalam data science adalah Distribusi Normal, Binomial, dan Poisson.   
-
-4.1. Distribusi Normal (Gaussian)
-Ini adalah distribusi yang paling penting dalam statistik. Berbentuk seperti lonceng simetris, distribusi ini ditentukan oleh dua parameter: Mean (μ) dan Standar Deviasi (σ). Menurut Teorema Limit Pusat, rata-rata dari banyak variabel acak independen akan mendekati distribusi normal, terlepas dari distribusi aslinya. Ini menjelaskan mengapa banyak fenomena alam (tinggi badan, tekanan darah, skor IQ) mengikuti pola ini.
-
-4.2. Distribusi Binomial
-Distribusi Binomial memodelkan proses diskrit yang hanya memiliki dua hasil yang mungkin (Sukses/Gagal) dalam serangkaian percobaan independen. Parameter kuncinya adalah jumlah percobaan (n) dan probabilitas sukses (p). Contoh klasik adalah pelemparan koin: berapa peluang mendapatkan tepat 5 "Gambar" dalam 10 kali lemparan? Distribusi ini fundamental untuk uji A/B testing dan analisis konversi website.
-
-4.3. Distribusi Poisson
-Distribusi Poisson digunakan untuk memodelkan jumlah kejadian yang terjadi dalam interval waktu atau ruang yang tetap, dengan asumsi kejadian tersebut terjadi dengan laju rata-rata yang konstan (λ) dan independen satu sama lain. Contoh penerapannya meliputi menghitung jumlah pengunjung website per jam, jumlah kedatangan pelanggan di bank per menit, atau jumlah cacat per meter kain. Berbeda dengan distribusi Normal yang simetris, distribusi Poisson seringkali miring ke kanan, terutama jika rata-rata kejadiannya (λ) kecil, karena jumlah kejadian tidak bisa bernilai negatif (dibatasi nol di sisi kiri).
-
-Visualisasi adalah cara terbaik untuk memahami perbedaan karakteristik distribusi ini:
-
-Python
-import matplotlib.pyplot as plt
-import seaborn as sns
-from scipy import stats
-
-# Konfigurasi plot
-sns.set_style("whitegrid")
-plt.figure(figsize=(18, 6))
-
-# 1. Distribusi Normal
-# Parameter: mean (loc) = 0, std dev (scale) = 1
-data_normal = stats.norm.rvs(size=10000, loc=0, scale=1)
-plt.subplot(1, 3, 1)
-sns.histplot(data_normal, kde=True, color='skyblue', bins=30)
-plt.title('Distribusi Normal (Gaussian)\nSimetris Sempurna')
-plt.xlabel('Nilai')
-
-# 2. Distribusi Binomial
-# Parameter: n=10 (percobaan), p=0.5 (peluang sukses)
-data_binom = stats.binom.rvs(n=10, p=0.5, size=10000)
-plt.subplot(1, 3, 2)
-sns.histplot(data_binom, kde=False, color='lightgreen', discrete=True)
-plt.title('Distribusi Binomial (n=10, p=0.5)\nDiskrit, Terbatas')
-plt.xlabel('Jumlah Sukses')
-
-# 3. Distribusi Poisson
-# Parameter: mu (lambda) = 3 (rata-rata kejadian)
-data_poisson = stats.poisson.rvs(mu=3, size=10000)
-plt.subplot(1, 3, 3)
-sns.histplot(data_poisson, kde=False, color='salmon', discrete=True)
-plt.title('Distribusi Poisson (lambda=3)\nMiring ke Kanan (Skewed)')
-plt.xlabel('Jumlah Kejadian')
-
-plt.tight_layout()
-plt.show()
-5. Visualisasi Data Univariat dan Multivariat
-Jika statistik deskriptif memberikan ringkasan numerik, visualisasi data memberikan wawasan intuitif yang sering kali tidak tertangkap oleh angka saja. Visualisasi dapat dibagi menjadi dua kategori besar berdasarkan jumlah variabel yang dianalisis.
-
-5.1. Visualisasi Univariat
-Fokus pada satu variabel untuk memahami distribusinya.
-
-Histogram: Alat paling dasar untuk melihat frekuensi data. Sangat berguna untuk mendeteksi skewness dan modus distribusi.   
-
-Boxplot (Diagram Kotak-Garis): Visualisasi yang sangat kuat untuk statistik lima serangkai (Minimum, Q1, Median, Q3, Maksimum). Boxplot adalah metode standar industri untuk mendeteksi outlier secara visual. Titik-titik di luar "kumis" (whiskers) boxplot secara otomatis dianggap sebagai nilai ekstrem.   
-
-5.2. Visualisasi Multivariat
-Fokus pada hubungan antara dua atau lebih variabel.
-
-Scatter Plot (Diagram Pencar): Menampilkan titik-titik data pada koordinat Cartesian untuk dua variabel numerik. Pola titik dapat menunjukkan korelasi (positif/negatif), kekuatan hubungan, dan keberadaan kelompok (cluster). Pustaka Seaborn memperkaya scatter plot dengan kemampuan menambahkan dimensi ketiga dan keempat melalui parameter warna (hue) dan ukuran (size) titik, memungkinkan analisis multidimensi dalam satu grafik 2D.   
-
-Heatmap (Peta Panas): Menggunakan intensitas warna untuk merepresentasikan nilai. Paling sering digunakan untuk memvisualisasikan Matriks Korelasi, di mana warna gelap/terang menunjukkan seberapa kuat hubungan antar variabel.   
-
-Pairplot: Sebuah matriks scatter plot yang memplot setiap variabel numerik terhadap setiap variabel lainnya dalam dataset. Ini memberikan pandangan "mata burung" terhadap seluruh interaksi dalam data.   
-
-Python
-import seaborn as sns
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Memuat dataset 'tips' dari Seaborn untuk demonstrasi
-df_tips = sns.load_dataset('tips')
-
-# 1. Visualisasi Multivariat Kompleks: Scatter Plot dengan 4 Dimensi
-# Dimensi 1 (X): Total Bill
-# Dimensi 2 (Y): Tip
-# Dimensi 3 (Warna/Hue): Jenis Kelamin (Sex)
-# Dimensi 4 (Ukuran/Size): Ukuran Meja (Size)
-plt.figure(figsize=(10, 6))
-sns.scatterplot(
-    x='total_bill', 
-    y='tip', 
-    hue='sex', 
-    size='size', 
-    sizes=(20, 200), 
-    alpha=0.7, 
-    data=df_tips
+# Strategi yang berbeda untuk tiap kolom
+df_fixed = df.copy()
+
+# Gaji: Isi dengan median (angka yang tahan outlier)
+df_fixed['Gaji'] = df_fixed['Gaji'].fillna(df_fixed['Gaji'].median())
+
+# Departemen: Isi dengan modus (nilai yang paling sering)
+df_fixed['Departemen'] = df_fixed['Departemen'].fillna(
+    df_fixed['Departemen'].mode()[0]
 )
-plt.title('Analisis Multivariat: Hubungan Tagihan, Tip, Gender, dan Ukuran Grup')
-plt.xlabel('Total Tagihan')
-plt.ylabel('Besaran Tip')
-plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
+
+# Tahun_Pengalaman: Isi dengan mean (rata-rata)
+df_fixed['Tahun_Pengalaman'] = df_fixed['Tahun_Pengalaman'].fillna(
+    df_fixed['Tahun_Pengalaman'].mean()
+)
+
+print("\nData Setelah Imputasi:")
+print(df_fixed)
+```
+
+---
+
+### 2.3 Menghapus Data Duplikat
+
+**Duplikat** = Baris yang benar-benar identik atau memiliki ID yang sama
+
+```python
+# Deteksi duplikat
+print(df.duplicated())  # Return True/False per baris
+
+# Hapus duplikat
+df_unique = df.drop_duplicates()
+
+# Hapus duplikat berdasarkan kolom tertentu (misalnya ID)
+df_unique = df.drop_duplicates(subset=['ID'])
+```
+
+**Kenapa Harus Dihapus?**
+- Data duplikat membuat model "bias" terhadap pola yang berulang
+- Mengganggu akurasi training
+
+---
+
+### 2.4 Binning & Smoothing (Mengurangi Noise)
+
+**Noise** = Variasi acak yang tidak bermakna dalam data
+
+#### Konsep Binning:
+Membagi data numerik berkelanjutan (continuous) menjadi kategori diskrit (discrete)
+
+**Contoh:**
+- Usia 20-30 → "Muda"
+- Usia 31-45 → "Produktif"  
+- Usia 46-60 → "Senior"
+
+**2 Tipe Binning:**
+
+**1. Equal-Width Binning** (Lebar bin sama)
+```python
+# Membagi 0-100 menjadi 4 bin berukuran 25 poin
+# Bin 1: 0-25, Bin 2: 25-50, Bin 3: 50-75, Bin 4: 75-100
+df['Harga_Bin'] = pd.cut(df['Harga'], bins=4)
+```
+
+**2. Equal-Frequency Binning** (Jumlah data per bin sama)
+```python
+# Setiap bin berisi jumlah data yang sama (~25% data per bin)
+df['Harga_Bin'] = pd.qcut(df['Harga'], q=4)
+```
+
+**Contoh Praktis:**
+
+```python
+import pandas as pd
+import numpy as np
+
+# Data harga yang berfluktuasi
+harga = np.array([15, 18, 22, 25, 28, 32, 35, 38, 42, 45, 
+                  48, 52, 55, 58, 62, 65, 68, 72, 75, 80])
+
+df = pd.DataFrame({'Harga_Asli': harga})
+
+# Equal-Width Binning
+df['Harga_Bin_EW'] = pd.cut(df['Harga_Asli'], bins=4)
+
+# Equal-Frequency Binning
+df['Harga_Bin_EF'] = pd.qcut(df['Harga_Asli'], q=4)
+
+print(df)
+```
+
+---
+
+## BAB 3: STATISTIK DESKRIPTIF
+
+Menggambarkan karakteristik data dengan angka-angka sederhana
+
+### 3.1 Ukuran Tendensi Sentral (Pusat Data)
+
+**Mean (Rata-rata):**
+```
+Mean = (x₁ + x₂ + x₃ + ... + xₙ) / n
+```
+- Sensitif terhadap outlier
+- Gunakan untuk data normal
+
+**Median (Nilai Tengah):**
+- Nilai yang membagi data menjadi 2 bagian sama
+- Tahan terhadap outlier
+- Lebih baik untuk data skewed
+
+**Modus (Paling Sering):**
+- Nilai yang paling banyak muncul
+- Satu-satunya untuk data kategorikal
+
+**Contoh:**
+```python
+import pandas as pd
+
+data = pd.Series([1, 2, 2, 3, 3, 3, 100])  # Ada outlier 100
+
+print(f"Mean: {data.mean()}")      # 16.14 (tertarik outlier)
+print(f"Median: {data.median()}")  # 3 (tahan outlier)
+print(f"Modus: {data.mode()[0]}")  # 3
+```
+
+### 3.2 Ukuran Dispersi (Penyebaran Data)
+
+**Range (Jangkauan):**
+```
+Range = Max - Min
+```
+
+**Varians (Variance):**
+```
+Variance = Rata-rata dari (setiap nilai - mean)²
+```
+- Semakin besar = data semakin tersebar
+
+**Standar Deviasi (Standard Deviation):**
+```
+Std Dev = √Variance
+```
+- Satuan yang sama dengan data asli
+- Lebih mudah diinterpretasi
+
+```python
+data = pd.Series([1, 2, 3, 4, 5])
+
+print(f"Variance: {data.var()}")      # 2.5
+print(f"Std Dev: {data.std()}")       # 1.58
+```
+
+### 3.3 Bentuk Distribusi Data
+
+#### Skewness (Kemencengan)
+
+**Skewness ≈ 0:** Distribusi simetris (bentuk lonceng normal)
+
+**Skewness Positif (> 0):** Ekor ke kanan
+- Contoh: Distribusi kekayaan (kebanyakan miskin, sedikit kaya)
+
+**Skewness Negatif (< 0):** Ekor ke kiri
+- Contoh: Nilai ujian mudah (kebanyakan tinggi, sedikit rendah)
+
+```python
+from scipy import stats
+
+data = np.array([1, 2, 2, 3, 3, 3, 4, 5, 10])  # Right-skewed
+print(f"Skewness: {stats.skew(data)}")  # Positif
+```
+
+#### Kurtosis (Keruncingan)
+
+**Kurtosis ≈ 0 (Mesokurtic):** Normal, puncak sedang
+
+**Kurtosis Positif (Leptokurtic):** Puncak tajam, ekor tebal
+- Banyak outlier
+- Berisiko tinggi
+
+**Kurtosis Negatif (Platykurtic):** Puncak datar, ekor tipis
+- Sedikit outlier
+- Data merata
+
+```python
+# Kurtosis dalam scipy (excess kurtosis, normal = 0)
+print(f"Kurtosis: {stats.kurtosis(data)}")
+```
+
+---
+
+## BAB 4: DISTRIBUSI PROBABILITAS
+
+Fungsi matematika yang menunjukkan kemungkinan terjadinya suatu peristiwa
+
+### 4.1 Distribusi Normal (Gaussian)
+
+**Karakteristik:**
+- Bentuk lonceng simetris
+- Mean = Median = Modus
+- Diatur oleh 2 parameter: μ (mean) dan σ (std dev)
+- **Central Limit Theorem**: Rata-rata dari banyak sampel akan normal, meski populasi asal tidak normal
+
+**Contoh Real-life:**
+- Tinggi badan manusia
+- Skor IQ
+- Bobot produk
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy import stats
+
+# Generate data normal
+data = np.random.normal(loc=100, scale=15, size=10000)
+
+plt.hist(data, bins=50, density=True, alpha=0.7)
+plt.title('Distribusi Normal')
 plt.show()
+```
 
-# 2. Visualisasi Korelasi: Heatmap
-# Hanya memilih kolom numerik untuk korelasi
-cols_numeric = df_tips.select_dtypes(include=[np.number])
-corr_matrix = cols_numeric.corr()
+### 4.2 Distribusi Binomial
 
-plt.figure(figsize=(8, 6))
-sns.heatmap(corr_matrix, annot=True, cmap='coolwarm', fmt=".2f", linewidths=.5)
-plt.title('Heatmap Matriks Korelasi')
+**Karakteristik:**
+- Hanya 2 hasil mungkin: Sukses atau Gagal
+- Diatur oleh: n (jumlah percobaan) dan p (peluang sukses)
+- Diskrit (bukan kontinyu)
+
+**Contoh Real-life:**
+- Pelemparan koin 10x, berapa peluang dapat 7 gambar?
+- A/B Testing website
+- Pass/Fail dalam ujian
+
+```python
+# Peluang mendapat 5 kepala dari 10 pelemparan koin (p=0.5)
+peluang = stats.binom.pmf(k=5, n=10, p=0.5)
+print(f"Peluang: {peluang}")  # 0.246
+```
+
+### 4.3 Distribusi Poisson
+
+**Karakteristik:**
+- Menghitung kejadian dalam interval waktu/ruang tertentu
+- Diatur oleh: λ (lambda = rata-rata kejadian)
+- Diskrit
+
+**Contoh Real-life:**
+- Jumlah pengunjung toko per jam
+- Jumlah email yang diterima per hari
+- Jumlah accident per jalan dalam sebulan
+
+```python
+# Peluang terima 5 email jika rata-rata 3 email per jam
+peluang = stats.poisson.pmf(k=5, mu=3)
+print(f"Peluang: {peluang}")
+```
+
+---
+
+## BAB 5: VISUALISASI DATA
+
+### 5.1 Visualisasi Univariat (1 Variabel)
+
+#### Histogram
+```python
+import matplotlib.pyplot as plt
+
+data = [1, 1, 2, 2, 2, 3, 3, 3, 3, 4, 5, 6, 7, 8, 8, 9]
+
+plt.hist(data, bins=5, edgecolor='black')
+plt.title('Histogram')
+plt.xlabel('Nilai')
+plt.ylabel('Frekuensi')
 plt.show()
-Dari visualisasi scatter plot di atas, seorang analis dapat segera menarik kesimpulan kualitatif: terdapat tren linier positif antara tagihan dan tip (tagihan besar cenderung menghasilkan tip besar). Selain itu, dengan melihat ukuran titik, kita bisa melihat bahwa grup yang lebih besar (titik besar) cenderung memiliki tagihan yang lebih tinggi, sebuah wawasan yang logis namun tervisualisasi dengan jelas. Heatmap kemudian mengkonfirmasi observasi ini dengan angka korelasi yang konkret.
+```
+**Gunakan untuk:** Melihat distribusi, modus, skewness
 
-6. Inferensi Statistik: Uji Hipotesis
-Uji hipotesis adalah metode formal untuk mengambil keputusan berdasarkan data sampel. Dalam data science, ini digunakan untuk memvalidasi apakah perbedaan yang kita lihat dalam data adalah nyata atau hanya kebetulan statistik semata.
+#### Boxplot
+```python
+import matplotlib.pyplot as plt
+import numpy as np
 
-6.1. Mekanisme Uji Hipotesis
-Proses ini selalu melibatkan dua pernyataan yang saling bertentangan:
+data = np.array([1, 2, 3, 4, 5, 5, 5, 6, 7, 8, 9, 10, 15])
 
-Hipotesis Nol (H 
-0
-​
- ): Asumsi status quo. Biasanya menyatakan "tidak ada perbedaan" atau "tidak ada efek".
+plt.boxplot(data)
+plt.title('Boxplot')
+plt.ylabel('Nilai')
+plt.show()
+```
 
-Hipotesis Alternatif (H 
-1
-​
- ): Klaim yang ingin dibuktikan (misalnya: "ada perbedaan signifikan").
+**Bagian-bagian Boxplot:**
+```
+        Max
+         |
+    _____|_____
+   |           |   Q3 (75%)
+   |  ---|---  |   Median (50%)
+   |___________|   Q1 (25%)
+         |
+        Min
+```
 
-Keputusan diambil berdasarkan p-value. P-value mengukur probabilitas mendapatkan hasil observasi kita (atau yang lebih ekstrem) jika Hipotesis Nol benar.
+**Outlier:** Titik yang jauh di atas/bawah kumis (whisker)
 
-Jika p-value < alpha (biasanya 0.05), itu berarti sangat kecil kemungkinannya hasil ini terjadi karena kebetulan. Kita Menolak H 
-0
-​
- .
+### 5.2 Visualisasi Multivariat (2+ Variabel)
 
-Jika p-value > alpha, kita Gagal Menolak H 
-0
-​
- .
+#### Scatter Plot
+```python
+import matplotlib.pyplot as plt
 
-6.2. Uji T (T-Test)
-Uji T adalah salah satu uji statistik paling umum yang digunakan untuk membandingkan rata-rata.
+x = [1, 2, 3, 4, 5]
+y = [2, 4, 5, 4, 6]
 
-Jenis Uji T	Kegunaan	Contoh Kasus
-One-Sample T-Test	Membandingkan rata-rata satu sampel dengan nilai populasi yang diketahui/diasumsikan.	Apakah rata-rata berat isi produk sereal ini benar 500gr seperti klaim di kemasan?
-Independent Two-Sample T-Test	Membandingkan rata-rata dua kelompok yang tidak berhubungan.	Apakah rata-rata gaji karyawan Pria berbeda signifikan dengan karyawan Wanita?
-Welch’s T-Test	Variasi dari Independent T-Test, digunakan jika varians kedua kelompok TIDAK sama.	Membandingkan performa mesin A (stabil) dan mesin B (fluktuatif).
-Berikut adalah implementasi kode untuk melakukan uji hipotesis menggunakan pustaka scipy.stats :   
+plt.scatter(x, y)
+plt.title('Scatter Plot')
+plt.xlabel('X')
+plt.ylabel('Y')
+plt.show()
+```
+**Gunakan untuk:** Melihat hubungan/korelasi antar variabel
 
-Python
+#### Correlation Heatmap
+```python
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Buat korelasi matrix
+corr = df[['Gaji', 'Pengalaman', 'Usia']].corr()
+
+# Visualisasi
+sns.heatmap(corr, annot=True, cmap='coolwarm')
+plt.show()
+```
+
+**Interpretasi Warna:**
+- 🔴 Merah (1.0) = Korelasi sempurna positif
+- ⚪ Putih (0.0) = Tidak ada korelasi
+- 🔵 Biru (-1.0) = Korelasi sempurna negatif
+
+---
+
+## BAB 6: UJI HIPOTESIS (Hypothesis Testing)
+
+Metode formal untuk membuat keputusan berdasarkan data
+
+### 6.1 Konsep Dasar
+
+**Hipotesis Nol (H₀):** Asumsi default (status quo)
+- Biasanya: "Tidak ada perbedaan" atau "Tidak ada pengaruh"
+
+**Hipotesis Alternatif (H₁):** Apa yang ingin kita buktikan
+- Contoh: "Ada perbedaan signifikan"
+
+### 6.2 P-Value & Keputusan
+
+**P-value:** Probabilitas mendapat hasil observasi JIKA H₀ benar
+
+**Rule:**
+```
+Jika p-value < 0.05 → TOLAK H₀ (Ada perbedaan signifikan)
+Jika p-value ≥ 0.05 → GAGAL TOLAK H₀ (Tidak ada bukti perbedaan)
+```
+
+**Analogi:**
+- p-value = Seberapa aneh hasil kita jika H₀ benar
+- p-value kecil = Hasil sangat aneh, mungkin H₀ salah
+
+### 6.3 T-Test (Membandingkan 2 Rata-rata)
+
+**Kapan digunakan:**
+- Membandingkan 2 kelompok
+- Data normal atau n > 30
+- Contoh: Apakah gaji Pria ≠ gaji Wanita?
+
+```python
 from scipy import stats
 import numpy as np
 
-np.random.seed(42)
+# Simulasi gaji 2 kelompok
+gaji_pria = np.array([5000000, 5500000, 6000000, 5800000, 6200000])
+gaji_wanita = np.array([4500000, 5000000, 5200000, 5100000, 5300000])
 
-# Skenario: Membandingkan efektivitas dua desain website (A/B Testing)
-# Metrik: Waktu yang dihabiskan pengguna di halaman (dalam detik)
+# H₀: Rata-rata gaji Pria = Rata-rata gaji Wanita
+# H₁: Rata-rata gaji Pria ≠ Rata-rata gaji Wanita
 
-# Grup A (Desain Lama): Mean=120 detik, Std=30
-time_A = stats.norm.rvs(loc=120, scale=30, size=50)
+t_stat, p_value = stats.ttest_ind(gaji_pria, gaji_wanita)
 
-# Grup B (Desain Baru): Mean=135 detik, Std=30
-time_B = stats.norm.rvs(loc=135, scale=30, size=50)
-
-# 1. Independent T-Test
-# Asumsi H0: Rata-rata waktu A = Rata-rata waktu B
-# Asumsi H1: Rata-rata waktu A!= Rata-rata waktu B
-
-# Kita menggunakan equal_var=True karena kita mensimulasikan std yang sama
-t_stat, p_val = stats.ttest_ind(time_A, time_B, equal_var=True)
-
-print("--- Hasil Uji Hipotesis A/B Testing ---")
-print(f"Rata-rata Grup A: {np.mean(time_A):.2f}")
-print(f"Rata-rata Grup B: {np.mean(time_B):.2f}")
 print(f"T-statistic: {t_stat:.4f}")
-print(f"P-value: {p_val:.4f}")
+print(f"P-value: {p_value:.4f}")
 
-# Interpretasi P-value
-alpha = 0.05
-if p_val < alpha:
-    print("\nKesimpulan: TOLAK H0.")
-    print("Ada perbedaan signifikan secara statistik antara durasi kunjungan Desain A dan B.")
-    print("Perubahan desain website memberikan dampak nyata.")
+if p_value < 0.05:
+    print("✓ TOLAK H₀: Ada perbedaan signifikan gaji")
 else:
-    print("\nKesimpulan: GAGAL TOLAK H0.")
-    print("Tidak cukup bukti untuk mengatakan ada perbedaan durasi kunjungan.")
-Penting untuk dicatat bahwa jika varians kedua kelompok sangat berbeda (heteroskedastisitas), penggunaan T-test standar dapat memberikan hasil yang menyesatkan. Dalam kasus tersebut, parameter equal_var=False harus digunakan untuk mengaktifkan Welch's T-test, yang lebih robust terhadap ketidaksamaan varians.   
+    print("✗ GAGAL TOLAK H₀: Tidak ada bukti perbedaan gaji")
+```
 
-7. Regresi Linear: Pemodelan Prediktif Supervised
-Regresi Linear adalah algoritma Supervised Learning yang paling mendasar namun kuat. Tujuannya adalah memodelkan hubungan antara variabel dependen (Target/Y) dan satu atau lebih variabel independen (Fitur/X) dengan mencocokkan garis lurus (linear) yang meminimalkan kesalahan prediksi.
+**Tipe T-Test:**
 
-7.1. Konsep Garis Kesesuaian Terbaik (Best Fit Line)
-Secara konseptual, model ini mencari garis yang meminimalkan jarak vertikal (residual) antara titik data aktual dan garis prediksi. Garis ini didefinisikan oleh dua parameter utama:
+| Tipe | Kegunaan | Contoh |
+|------|----------|--------|
+| One-Sample | Bandingkan 1 sampel dengan nilai konstan | Apakah rata-rata tinggi mahasiswa = 170cm? |
+| Two-Sample | Bandingkan 2 kelompok berbeda | Apakah gaji Pria ≠ Wanita? |
+| Paired | Bandingkan 2 pengukuran dari orang sama | Berat sebelum & sesudah diet |
 
-Intercept: Titik di mana garis memotong sumbu Y (nilai Y ketika X=0).
+---
 
-Koefisien (Slope): Kemiringan garis, yang menunjukkan seberapa besar perubahan Y untuk setiap satu satuan perubahan X.
+## BAB 7: REGRESI LINEAR (Prediksi)
 
-7.2. Alur Kerja Implementasi Scikit-Learn
-Implementasi standar di Python melibatkan langkah-langkah prosedural: pembagian data (Train-Test Split), pelatihan model (Fitting), prediksi, dan evaluasi. Pembagian data menjadi Training Set dan Testing Set sangat krusial untuk mencegah overfitting—kondisi di mana model hanya "menghafal" data latihan tetapi gagal memprediksi data baru.   
+Algoritma pembelajaran tersupervisi (supervised) untuk memprediksi nilai kontinyu
 
-Evaluasi model regresi menggunakan metrik kuantitatif:
+### 7.1 Konsep Dasar
 
-Mean Squared Error (MSE): Rata-rata kuadrat kesalahan. Menghukum kesalahan besar lebih berat.
+**Tujuan:** Mencari garis lurus terbaik yang mewakili hubungan X → Y
 
-Root Mean Squared Error (RMSE): Akar dari MSE. Satuannya sama dengan variabel target, sehingga lebih mudah diinterpretasi secara intuitif.
+**Formula:** 
+```
+Y = a + b*X + error
 
-R-Squared (R 
-2
- ): Koefisien determinasi. Menjelaskan persentase variasi dalam data target yang dapat dijelaskan oleh model. Nilai 1.0 berarti prediksi sempurna, nilai 0 berarti model tidak lebih baik dari sekadar menebak rata-rata target.
+Dimana:
+- a = Intercept (nilai Y saat X=0)
+- b = Slope/Koefisien (perubahan Y per unit X)
+- error = Selisih prediksi dengan aktual
+```
 
-Python
+**Contoh:**
+```
+Gaji = 3000000 + 500000*Pengalaman + error
+- Setiap 1 tahun pengalaman → gaji +500rb
+- Tanpa pengalaman → gaji dasar 3juta
+```
+
+### 7.2 Training & Testing
+
+**Kenapa Harus Dibagi?**
+- Training set: Untuk mengajarkan model
+- Testing set: Untuk menguji akurasi di data baru (generalisasi)
+- Jika tidak dibagi: Model hanya "menghafal" data training → Overfitting
+
+```python
 from sklearn.model_selection import train_test_split
+
+# Pisahkan 80% training, 20% testing
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42
+)
+```
+
+### 7.3 Implementasi Lengkap
+
+```python
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error, r2_score
-import pandas as pd
+from sklearn.model_selection import train_test_split
 import numpy as np
+import pandas as pd
 
-# Menggunakan data simulasi hubungan Pengalaman Kerja vs Gaji
-np.random.seed(0)
-pengalaman = np.random.rand(100, 1) * 10 # 0-10 tahun
-gaji = 3000 + (pengalaman * 500) + np.random.randn(100, 1) * 200 # Pola dasar + Noise
+# 1. PERSIAPAN DATA
+# Simulasi: Prediksi gaji berdasarkan tahun pengalaman
+np.random.seed(42)
+pengalaman = np.array([[1], [2], [3], [4], [5], [6], [7], [8], [9], [10]])
+gaji = 3000000 + pengalaman*500000 + np.random.normal(0, 200000, (10, 1))
 
-# 1. Train-Test Split (Pemisahan Data)
-# Memisahkan 20% data untuk pengujian
-X_train, X_test, y_train, y_test = train_test_split(pengalaman, gaji, test_size=0.2, random_state=42)
+# 2. BAGI DATA
+X_train, X_test, y_train, y_test = train_test_split(
+    pengalaman, gaji, test_size=0.2, random_state=42
+)
 
-# 2. Inisialisasi dan Pelatihan Model
+# 3. TRAINING MODEL
 model = LinearRegression()
 model.fit(X_train, y_train)
 
-# 3. Prediksi pada Data Test (Data yang belum pernah dilihat model)
-y_pred = model.predict(X_test)
+# 4. PREDIKSI
+y_pred_test = model.predict(X_test)
 
-# 4. Evaluasi Performa
-mse = mean_squared_error(y_test, y_pred)
+# 5. EVALUASI
+mse = mean_squared_error(y_test, y_pred_test)
 rmse = np.sqrt(mse)
-r2 = r2_score(y_test, y_pred)
+r2 = r2_score(y_test, y_pred_test)
 
-print("--- Hasil Regresi Linear ---")
-print(f"Intercept (Gaji Dasar): {model.intercept_:.2f}")
-print(f"Koefisien (Kenaikan Gaji per Tahun): {model.coef_:.2f}")
-print(f"\nEvaluasi Model:")
-print(f"RMSE: {rmse:.2f} (Rata-rata kesalahan prediksi gaji)")
-print(f"R-Squared: {r2:.4f} (Model menjelaskan {r2*100:.2f}% variasi gaji)")
-Dalam contoh di atas, jika model menghasilkan koefisien 500, itu berarti secara statistik, setiap tambahan satu tahun pengalaman kerja berkorelasi dengan kenaikan gaji sebesar 500 unit mata uang, asumsi variabel lain konstan. Wawasan kausalitas seperti ini menjadikan regresi linear alat yang sangat disukai dalam analisis bisnis dan ekonomi, meskipun asumsi linearitasnya sering kali terlalu sederhana untuk fenomena dunia nyata yang kompleks.   
+print(f"Intercept (a): {model.intercept_[0]:,.0f}")
+print(f"Slope (b): {model.coef_[0][0]:,.0f}")
+print(f"\nPerformansi:")
+print(f"MSE: {mse:,.0f}")
+print(f"RMSE: {rmse:,.0f}")
+print(f"R² Score: {r2:.4f}")
 
-8. Analisis Klaster: K-Means Clustering
-Berbeda dengan regresi yang memiliki target label (Supervised), Clustering adalah metode Unsupervised Learning. Di sini, data tidak memiliki label "benar" atau "salah". Tujuannya adalah murni eksploratif: menemukan struktur tersembunyi dengan mengelompokkan data yang mirip ke dalam satu grup (cluster) dan memisahkan data yang berbeda ke grup lain. Salah satu algoritma paling populer adalah K-Means Clustering.
+# Interpretasi:
+# - Setiap 1 tahun pengalaman → gaji naik b
+# - Model menjelaskan r2*100% variasi gaji
+```
 
-8.1. Mekanisme K-Means dan Pentingnya Skala
-Algoritma K-Means bekerja secara iteratif untuk mempartisi data ke dalam K klaster yang ditentukan pengguna. Prosesnya melibatkan penentuan titik pusat (centroid) acak, menugaskan setiap titik data ke centroid terdekat, dan kemudian memperbarui posisi centroid berdasarkan rata-rata anggota klasternya. Proses ini berulang hingga posisi centroid stabil (konvergen).   
+### 7.4 Metrik Evaluasi
 
-Satu hal yang sangat kritikal dalam K-Means adalah Feature Scaling. Karena K-Means menggunakan jarak Euclidean untuk menentukan kemiripan, variabel dengan skala besar (misalnya Gaji: 10.000.000) akan mendominasi variabel dengan skala kecil (misalnya Usia: 30) dalam perhitungan jarak. Tanpa standarisasi (menggunakan StandardScaler), hasil klastering akan sepenuhnya bias oleh variabel berskala besar tersebut.   
+**Mean Squared Error (MSE):**
+```
+MSE = Rata-rata dari (prediksi - aktual)²
+```
+- Menghukum error besar lebih keras
+- Satuan = kuadrat dari variabel target
 
-8.2. Menentukan Jumlah Klaster (Nilai K) Optimal
-Karena ini adalah pembelajaran tanpa pengawasan, kita tidak tahu pasti berapa jumlah klaster yang "benar". Namun, ada dua metode heuristik statistik untuk membantu pengambilan keputusan:
+**Root Mean Squared Error (RMSE):**
+```
+RMSE = √MSE
+```
+- Satuan sama dengan variabel target
+- Lebih mudah interpretasi
 
-Metode Siku (Elbow Method): Metode ini memplot nilai Inertia (jumlah kuadrat jarak titik ke centroid terdekatnya) terhadap jumlah K. Saat K bertambah, inertia pasti menurun karena klaster menjadi lebih kecil dan padat. Kita mencari titik "siku" pada grafik—titik di mana penurunan inertia mulai melambat secara drastis. Titik ini dianggap sebagai trade-off optimal antara kompresi dan akurasi.   
+**R-Squared (R²):**
+```
+R² = 1 - (SS_residual / SS_total)
+```
+- Nilai 0-1 (bisa negatif jika model sangat buruk)
+- **Interpretasi:** Model menjelaskan R²×100% variasi Y
+- R² = 0.8 → Model menjelaskan 80% variasi
+- R² = 1.0 → Prediksi sempurna
 
-Silhouette Analysis: Metode ini lebih canggih karena mengukur seberapa mirip sebuah objek dengan klasternya sendiri (kohesi) dibandingkan dengan klaster tetangga lainnya (pemisahan). Skor Silhouette berkisar dari -1 hingga +1.
+**Contoh Interpretasi:**
+```
+R² = 0.75
+Berarti: 75% variasi gaji bisa dijelaskan oleh pengalaman
+         25% dipengaruhi faktor lain (skill, sertifikat, dll)
+```
 
-Nilai mendekati +1: Klaster terdefinisi dengan sangat baik dan terpisah jauh.
+---
 
-Nilai mendekati 0: Klaster tumpang tindih (overlapping).
+## BAB 8: CLUSTERING (K-MEANS)
 
-Nilai negatif: Data mungkin ditempatkan di klaster yang salah. Nilai rata-rata Silhouette yang tertinggi biasanya menunjukkan jumlah K yang paling alami untuk data tersebut.   
+Algoritma pembelajaran tanpa supervisi (unsupervised) untuk mengelompokkan data
 
-Berikut adalah implementasi lengkap K-Means beserta evaluasi penentuan K:
+### 8.1 Konsep Dasar
 
-Python
+**Tujuan:** Membagi data menjadi K kelompok yang mirip dalam satu cluster dan berbeda antar cluster
+
+**Analogi:**
+- Kasir toko mengelompokkan pelanggan: VIP, Regular, New
+- Rumah sakit mengelompokkan pasien: Kritis, Sedang, Ringan
+- Tidak ada label "benar/salah", murni explorasi
+
+### 8.2 Algoritma K-Means
+
+**Langkah-langkah:**
+
+1. **Pilih K** (jumlah cluster)
+2. **Tentukan centroid awal** (pusat cluster) secara random
+3. **Assign data** ke centroid terdekat
+4. **Update centroid** = rata-rata semua data dalam cluster
+5. **Ulangi** langkah 3-4 sampai centroid stabil
+
+**Istilah Penting:**
+- **Centroid:** Pusat dari sebuah cluster
+- **Inertia:** Total jarak semua data ke centroid terdekat mereka
+- **Konvergen:** Centroid tidak berubah lagi
+
+### 8.3 Pentingnya Scaling
+
+**Masalah:**
+```
+Gaji (juta): 5, 6, 7
+Usia: 25, 30, 35
+
+Jarak Euclidean = √((5-6)² + (25-30)²) = √(1 + 2500) ≈ 50
+Usia mendominasi meski skala berbeda 1000x!
+```
+
+**Solusi: StandardScaler**
+```python
+from sklearn.preprocessing import StandardScaler
+
+# Standarisasi: (x - mean) / std
+# Hasilnya: Mean=0, Std=1 untuk semua kolom
+
+scaler = StandardScaler()
+X_scaled = scaler.fit_transform(X)
+```
+
+### 8.4 Menentukan K Optimal
+
+#### Elbow Method
+
+```python
+from sklearn.cluster import KMeans
+import matplotlib.pyplot as plt
+
+inertia_list = []
+K_range = range(1, 10)
+
+for k in K_range:
+    kmeans = KMeans(n_clusters=k, random_state=42)
+    kmeans.fit(X_scaled)
+    inertia_list.append(kmeans.inertia_)
+
+plt.plot(K_range, inertia_list, 'bo-')
+plt.xlabel('Jumlah Cluster (K)')
+plt.ylabel('Inertia')
+plt.title('Elbow Method')
+plt.show()
+```
+
+**Cara Membaca:**
+- Cari titik "siku" di grafik
+- Inertia turun tajam → Mulai flat → Pilih K di titik transisi
+- Contoh: Jika siku di K=4, pilih K=4
+
+#### Silhouette Analysis
+
+**Silhouette Score:** Mengukur seberapa bagus cluster separation
+
+```
+Score 1: Sempurna (jauh dari cluster lain)
+Score 0: Ambiguous (di perbatasan)
+Score -1: Salah tempat (lebih dekat cluster lain)
+```
+
+```python
+from sklearn.metrics import silhouette_score
+
+silhouette_scores = []
+for k in K_range:
+    kmeans = KMeans(n_clusters=k, random_state=42)
+    labels = kmeans.fit_predict(X_scaled)
+    score = silhouette_score(X_scaled, labels)
+    silhouette_scores.append(score)
+
+# Pilih K dengan silhouette score tertinggi
+best_k = K_range[silhouette_scores.index(max(silhouette_scores))]
+```
+
+### 8.5 Implementasi Lengkap K-Means
+
+```python
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import silhouette_score
 from sklearn.datasets import make_blobs
 import matplotlib.pyplot as plt
+import numpy as np
 
-# 1. Pembuatan Data Simulasi
-# Membuat 300 data poin yang terpusat di 4 lokasi berbeda (blob)
-X, _ = make_blobs(n_samples=300, centers=4, cluster_std=0.60, random_state=0)
+# 1. PERSIAPAN DATA
+# Buat data simulasi: 200 titik, 3 kelompok alami
+X, _ = make_blobs(n_samples=200, centers=3, random_state=42)
 
-# 2. Preprocessing: Standarisasi Data (Wajib untuk K-Means)
+# 2. SCALING (WAJIB!)
 scaler = StandardScaler()
 X_scaled = scaler.fit_transform(X)
 
-# 3. Mencari Nilai K Optimal: Elbow Method & Silhouette Score
-inertia =
-silhouette_avgs =
-range_k = range(2, 10) # Mencoba K dari 2 hingga 9
+# 3. MENCARI K OPTIMAL
+inertias = []
+silhouettes = []
+K_range = range(2, 8)
 
-for k in range_k:
-    # Inisialisasi dan Fitting K-Means
+for k in K_range:
     kmeans = KMeans(n_clusters=k, n_init=10, random_state=42)
     kmeans.fit(X_scaled)
-    
-    # Simpan Inertia (untuk Elbow Plot)
-    inertia.append(kmeans.inertia_)
-    
-    # Simpan Silhouette Score
-    cluster_labels = kmeans.predict(X_scaled)
-    sil_score = silhouette_score(X_scaled, cluster_labels)
-    silhouette_avgs.append(sil_score)
+    inertias.append(kmeans.inertia_)
+    silhouettes.append(silhouette_score(X_scaled, kmeans.labels_))
 
-# 4. Visualisasi Evaluasi
-fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 5))
+# Plot
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 4))
 
-# Plot Elbow Method
-ax1.plot(range_k, inertia, 'bo-')
-ax1.set_xlabel('Jumlah Klaster (K)')
-ax1.set_ylabel('Inertia (WCSS)')
-ax1.set_title('Metode Siku (Elbow Method)')
-ax1.grid(True)
+ax1.plot(K_range, inertias, 'bo-')
+ax1.set_xlabel('K')
+ax1.set_ylabel('Inertia')
+ax1.set_title('Elbow Method')
 
-# Plot Silhouette Score
-ax2.plot(range_k, silhouette_avgs, 'rs-')
-ax2.set_xlabel('Jumlah Klaster (K)')
-ax2.set_ylabel('Rata-rata Silhouette Score')
-ax2.set_title('Analisis Silhouette')
-ax2.grid(True)
+ax2.plot(K_range, silhouettes, 'ro-')
+ax2.set_xlabel('K')
+ax2.set_ylabel('Silhouette Score')
+ax2.set_title('Silhouette Analysis')
 
 plt.show()
 
-# 5. Implementasi Final (Misalkan K=4 terpilih berdasarkan grafik)
-kmeans_final = KMeans(n_clusters=4, n_init=10, random_state=42)
-y_kmeans = kmeans_final.fit_predict(X_scaled)
+# 4. TRAINING DENGAN K TERBAIK
+best_k = 3  # Asumsi optimal
+kmeans_final = KMeans(n_clusters=best_k, n_init=10, random_state=42)
+labels = kmeans_final.fit_predict(X_scaled)
 
-print("Klastering selesai. Label klaster telah diberikan ke setiap titik data.")
-Dalam interpretasi grafik yang dihasilkan kode di atas: pada plot Elbow, kita akan melihat penurunan tajam hingga K=4 dan kemudian melandai, membentuk siku yang jelas. Pada plot Silhouette, nilai skor tertinggi kemungkinan besar juga akan terjadi pada K=4. Konvergensi kedua indikator ini memberikan kepercayaan diri yang tinggi bagi analis untuk menetapkan bahwa data memang secara alami terbagi menjadi 4 kelompok.
+# 5. HASIL
+print(f"Centroid:\n{kmeans_final.cluster_centers_}")
+print(f"Label cluster setiap data:\n{labels[:20]}")  # 20 pertama
+```
 
-9. Kesimpulan
-Laporan ini telah menguraikan secara komprehensif elemen-elemen fundamental dalam data science modern. Dimulai dari pengakuan bahwa data mentah bersifat kacau, kita mempelajari teknik pembersihan data yang ketat—seperti imputasi nilai hilang, penghapusan duplikat, dan smoothing noise—sebagai prasyarat mutlak untuk analisis yang valid. Kita kemudian mengeksplorasi karakteristik data melalui statistik deskriptif dan visualisasi, memahami bahwa angka seperti skewness dan kurtosis membawa implikasi besar bagi pemilihan model.
+---
 
-Transisi dari analisis deskriptif ke inferensial (uji hipotesis) dan prediktif (regresi linear) menunjukkan bagaimana data science bergerak dari sekadar "apa yang terjadi" menjadi "apakah ini nyata" dan "apa yang akan terjadi". Akhirnya, teknik K-Means Clustering mendemonstrasikan kekuatan pembelajaran mesin untuk menemukan pola tanpa arahan manusia, asalkan didukung oleh metode evaluasi yang tepat seperti Silhouette Analysis. Penguasaan atas konsep-konsep dan implementasi kode Python ini memberikan fondasi yang kokoh bagi siapa pun yang ingin mendalami dunia kecerdasan buatan dan analitika tingkat lanjut.
+## CHEATSHEET UNTUK UJIAN
 
+### 1. Data Cleaning
+
+| Masalah | Solusi | Kode |
+|---------|--------|------|
+| Missing values | Median/Mean | `df['col'].fillna(df['col'].median())` |
+| Data duplikat | Hapus | `df.drop_duplicates()` |
+| Categorical | Encode | `pd.get_dummies(df)` |
+
+### 2. Statistik
+
+| Istilah | Formula | Kapan Pakai |
+|---------|---------|-----------|
+| Mean | Sum/n | Data normal |
+| Median | Nilai tengah | Data skewed |
+| Std Dev | √Variance | Ukur penyebaran |
+| Skewness | Asimetri | Bentuk distribusi |
+
+### 3. Testing
+
+| Test | Untuk | H₀ |
+|------|-------|-----|
+| T-Test | 2 rata-rata | Mean A = Mean B |
+| Chi-Square | Kategorikal | Kategori independen |
+
+### 4. Modeling
+
+| Model | Tujuan | Output |
+|-------|--------|--------|
+| Linear Regression | Prediksi kontinyu | Y = a + bX |
+| K-Means | Clustering | K centroid, labels |
+
+### 5. Metrik
+
+| Metrik | Formula | Interpretasi |
+|--------|---------|--------------|
+| RMSE | √MSE | Semakin kecil semakin baik |
+| R² | 1 - SS_res/SS_tot | % variasi dijelaskan |
+
+---
+
+## TIPS PENTING UNTUK UJIAN
+
+✅ **PASTI DITANYA:**
+1. Cara menangani missing values (kenapa & bagaimana)
+2. Perbedaan Mean vs Median (kapan pakai)
+3. Konsep p-value di hypothesis testing
+4. Perbedaan supervised vs unsupervised learning
+5. Cara menentukan K di K-Means (elbow method)
+6. Interpretasi R² score
+
+✅ **SERING DITANYA:**
+7. Preprocessing data (scaling, binning)
+8. Visualisasi data (histogram, scatter, heatmap)
+9. Metrics evaluasi (MSE, RMSE, R²)
+10. Mengapa train-test split penting
+
+✅ **ALGORITHM YANG SERING DIMINTA KODE:**
+- Handling missing values dengan berbagai strategi
+- T-Test implementation
+- Linear Regression (training & evaluasi)
+- K-Means clustering (dengan scaling)
+
+---
+
+## RINGKASAN ALUR DATA SCIENCE
+
+```
+1. IMPORT & LOAD DATA
+   ↓
+2. DATA CLEANING (handling missing, duplikat, outlier)
+   ↓
+3. EDA (statistik, visualisasi, distribusi)
+   ↓
+4. HYPOTHESIS TESTING (validasi asumsi)
+   ↓
+5. PREPROCESSING (scaling, encoding)
+   ↓
+6. MODELING (training dengan train set)
+   ↓
+7. EVALUATION (test dengan test set)
+   ↓
+8. INSIGHT & DECISION MAKING
+```
+
+---
+
+Semoga catatan ini lebih mudah dipahami! Selamat belajar! 🚀
