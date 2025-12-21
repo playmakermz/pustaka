@@ -1,5 +1,7 @@
 # CATATAN DATA SCIENCE - PERSIAPAN UJIAN
 
+[https://github.com/playmakermz/warkop-website/blob/main/document/DataScience/Data-management.md]
+
 ## BAB 1: PENGENALAN DATA SCIENCE
 
 ### Apa Itu Data Science?
