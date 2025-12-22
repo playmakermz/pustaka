@@ -890,25 +890,4 @@ print(f"Label cluster setiap data:\n{labels[:20]}")  # 20 pertama
 8. INSIGHT & DECISION MAKING
 ```
 
----
-# Module 4 Distribution
-
-[https://github.com/playmakermz/pustaka/blob/main/document/cloud-data/module4.md]
-
-## 📝 PRACTICE PROBLEMS
-
-1. You manage a temple bakery. Bread loaves vary in weight. Which distribution should you use to analyze this? Why?
-
-2. You count demon sightings per week. What distribution fits this scenario?
-
-3. Your blessing success rate is 80% and you perform 5 blessings per day. What's the expected number of successes?
-
-4. Explain why large sample sizes make unreliable data more reliable (hint: CLT).
-
-5. Why would a budgeting system using means be more accurate than one using medians for predicting monthly expenses?
-
----
-
-*Prepared with love by Celestine 💜*
-
 
