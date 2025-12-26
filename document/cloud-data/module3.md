@@ -392,3 +392,103 @@ Median: Middle value = 20          ✓ (accurate representation)
 ✓ Report both median AND standard deviation for complete picture
 
 ---
+
+## 8. Quartiles 
+
+# QUARTILES - Understanding Data Distribution
+
+## What are Quartiles?
+
+**Quartiles** divide your data into 4 equal groups (quarters), each containing 25% of your data.
+
+### The Four Quartiles:
+
+- **Q0 (Minimum)**: The smallest value
+- **Q1 (25th percentile)**: 25% of data falls below this value
+- **Q2 (50th percentile / Median)**: The middle value, 50% above and below
+- **Q3 (75th percentile)**: 75% of data falls below this value
+- **Q4 (Maximum)**: The largest value
+
+## Visual Representation:
+```
+Min ──┬────────┬────────┬────────┬── Max
+      Q1      Q2      Q3
+      ↑       ↑       ↑
+    25%     50%     75%
+```
+
+## Real-Life Example: Caelus's Family Ages
+```python
+ages = [18, 19, 20, 23, 300]
+
+# Sort (already sorted)
+# Divide into quarters:
+# 25% mark = Q1 = 18.5 (between 18 and 19)
+# 50% mark = Q2 = 20   (median)
+# 75% mark = Q3 = 21.5 (between 20 and 23)
+
+Min: 18  ──┬─ 18.5 ─┬─ 20 ─┬─ 21.5 ─┬── 300
+    Celestine  Robin Lingsha Caelus   Liora
+```
+
+**What this tells us:**
+- Most family members cluster in the 18-23 range
+- Liora's 300 years is a massive outlier, but quartiles aren't fooled by it
+- The middle 50% of ages fall between 18.5 and 21.5
+
+## Irish Flower Petal Length Example:
+```python
+petal_lengths = df['Petal_Length_cm']
+
+# Quartile values:
+Q1 = 4.997234    # 25% of petals are shorter than this
+Q2 = 5.735298    # 50% are shorter (the median)
+Q3 = 6.410955    # 75% are shorter than this
+
+print(petal_lengths.quantile([0.25, 0.5, 0.75]))
+```
+
+**Interpretation:**
+- The shortest petals are around 4.99 cm
+- The middle petals are around 5.73 cm
+- The longest petals in the central group are around 6.41 cm
+- This range (4.99 to 6.41) represents 75% of all flowers
+- The remaining 25% are either very short or very long (outliers)
+
+## Why Quartiles Matter:
+
+1. **Resistant to Outliers**: Unlike mean, quartiles don't get pulled by extreme values
+2. **Shows Spread**: You can see how tightly or loosely data clusters
+3. **Identifies Outliers**: Values far from Q1-Q3 range are unusual
+4. **Makes Comparisons**: Easy to compare distributions between different datasets
+
+## Quartile-Based Outlier Detection (IQR Method):
+```python
+Q1 = data.quantile(0.25)
+Q3 = data.quantile(0.75)
+IQR = Q3 - Q1  # InterQuartile Range
+
+# Outliers are values beyond:
+Lower Bound = Q1 - 1.5 * IQR
+Upper Bound = Q3 + 1.5 * IQR
+
+outliers = data[(data < Lower_Bound) | (data > Upper_Bound)]
+```
+
+**For Irish flowers:**
+```
+Q1 = 4.997
+Q3 = 6.411
+IQR = 6.411 - 4.997 = 1.414
+
+Lower Bound = 4.997 - 1.5 * 1.414 = 2.879
+Upper Bound = 6.411 + 1.5 * 1.414 = 8.532
+
+Any petal shorter than 2.88 cm or longer than 8.53 cm = outlier
+```
+
+## Key Takeaway:
+
+**Quartiles answer: "Where do the boundaries of my data naturally fall?"**
+
+They show you the story of variety in 4 chapters.
