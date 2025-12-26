@@ -6,6 +6,61 @@
 
 ---
 
+## Test dan obserevasi 
+
+### 0. Observasi dataset 
+
+```python
+# STEP 1: COMPREHENSIVE DATA ANALYSIS
+print("=" * 70)
+print("STEP 1: IDENTIFY ALL PROBLEMS")
+print("=" * 70)
+
+# Check shape
+print(f"\n1. Dataset Shape: {df.shape}")
+print(f"   Rows: {df.shape[0]}, Columns: {df.shape[1]}")
+
+# Check data types
+print(f"\n2. Data Types:")
+print(df.dtypes)
+
+# Missing values detailed
+print(f"\n3. Missing Values Summary:")
+missing_summary = pd.DataFrame({
+    'Column': df.columns,
+    'Missing_Count': df.isnull().sum(),
+    'Missing_Percentage': (df.isnull().sum() / len(df) * 100).round(2)
+})
+print(missing_summary)
+
+# Duplicate rows
+print(f"\n4. Duplicate Rows:")
+print(f"   Total duplicates: {df.duplicated().sum()}")
+print(f"   Duplicate details:")
+print(df[df.duplicated(keep=False)].sort_values('Flower_ID'))
+
+# Basic statistics (to spot outliers)
+print(f"\n5. Basic Statistics (to identify outliers):")
+print(df.describe())
+
+# Check for potential outliers using IQR method
+print(f"\n6. Potential Outliers (using IQR method):")
+for col in df.select_dtypes(include=[np.number]).columns:
+    Q1 = df[col].quantile(0.25)
+    Q3 = df[col].quantile(0.75)
+    IQR = Q3 - Q1
+    lower_bound = Q1 - 1.5 * IQR
+    upper_bound = Q3 + 1.5 * IQR
+    outliers = df[(df[col] < lower_bound) | (df[col] > upper_bound)]
+    if len(outliers) > 0:
+        print(f"\n   {col}:")
+        print(f"   - Lower Bound: {lower_bound:.2f}, Upper Bound: {upper_bound:.2f}")
+        print(f"   - Found {len(outliers)} outlier(s)")
+        print(outliers[['Flower_ID', col]])
+```
+
+---
+
 ## Urutan Pengelolahan Dataset
 
 ### 1. ANALISA DATASET SECARA MANUAL
